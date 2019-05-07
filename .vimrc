@@ -90,6 +90,9 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 " ----- Start to emacsnize
 
+""""""""""""""""""""""""""""""""""""""""
+" mapping: emacs like
+""""""""""""""""""""""""""""""""""""""""
 noremap <C-a> <Home>
 noremap <C-e> <End>
 noremap! <C-a> <Home>
@@ -102,13 +105,18 @@ noremap! <C-f> <Right>
 noremap! <C-b> <Left>
 noremap! <C-d> <Del>
 noremap! <C-h> <BS>
+nnoremap <C-p> <Up>
 " ----- End of emacsnize
 
-" ----- edit vimrc
+""""""""""""""""""""""""""""""""""""""""
+" mapping: edit vimrc
+""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>e :edit $MYVIMRC<CR>
 nnoremap <Leader>s :source $MYVIMRC<CR>
 
-" ----- yank copy
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: yank copy
+""""""""""""""""""""""""""""""""""""""""
 " 貼り付けたテキストの末尾へ自動的に移動
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -117,7 +125,9 @@ nnoremap <silent> p p`]
 " 貼り付けたものをすばやく選択する
 noremap gV `[v`]
 
-" ----- Start to line-movng
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: Start to line-movng
+""""""""""""""""""""""""""""""""""""""""
 " 折り返し行移動
 nnoremap j gj
 nnoremap k gk
@@ -126,11 +136,11 @@ vnoremap k gk
 
 nnoremap <CR> G
 nnoremap <BS> gg
-" -----End of line-movng
 
-" ----- tarminal mode
 
-" ----- Start to hilight
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: hilight
+""""""""""""""""""""""""""""""""""""""""
 " dobule tap space then highlight the word on cursor
 set hlsearch! " *でhilightする
 map <ESC><ESC> :noh<CR>
@@ -143,16 +153,17 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
 omap s :normal vs<CR>
 
 " ----- Start to hilight
-" useing JIS and US keyboard
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting:  useing JIS and US keyboard
+""""""""""""""""""""""""""""""""""""""""
 nnoremap ' :
-" nnoremap! ' :
 noremap <C-@> <ESC>
 noremap! <C-@> <ESC>
 
-" plugins
-set runtimepath+=~/.vim/vim-gitgutter-master
-
+""""""""""""""""""""""""""""""""""""""""
+" function: clipy
 " クリップボードからコピー時、インデントを崩さまい
+""""""""""""""""""""""""""""""""""""""""
 if &term =~ "xterm"
     let &t_SI .= "\e[?2004h"
     let &t_EI .= "\e[?2004l"
@@ -166,7 +177,9 @@ if &term =~ "xterm"
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-"dein Scripts-----------------------------
+""""""""""""""""""""""""""""""""""""""""
+" Start to dein Scripts
+""""""""""""""""""""""""""""""""""""""""
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -238,40 +251,64 @@ if dein#check_install()
   call dein#install()
 endif
 
-"End dein Scripts-------------------------
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: airline
 " ブランチ情報を表示する
+""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#branch#enabled = 1
 
-" necomplete 有効化
-let g:neocomplete#enable_at_startup = 1
 
-" vim-auto-save
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: necomplete
+""""""""""""""""""""""""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#sources#omni#input_patterns = {
+" \  'ruby': '[^. *\t]\.\w*\|\h\w*::'
+" \}
+
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: vim-auto-save
+""""""""""""""""""""""""""""""""""""""""
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 let g:autosave_time = 3
 
-let g:neocomplete#sources#omni#input_patterns = {
-\  'ruby': '[^. *\t]\.\w*\|\h\w*::'
-\}
-"nerdtree
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: nerdtree
+""""""""""""""""""""""""""""""""""""""""
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
-" vvv 連続でペーストできるようになる
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: vvv
+""""""""""""""""""""""""""""""""""""""""
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" winresizer
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: winresizer
+""""""""""""""""""""""""""""""""""""""""
 let g:winresizer_start_key = '<C-(>'
 let g:winresizer_gui_start_key = '<C-)>'
 noremap <Leader>w :WinResizerStartResize<CR>
 
-" ctrlp
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: ctrlp
+""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = ''
 nmap <Leader>p :CtrlP<CR>
 let g:ctrlp_show_hidden = 1
 
-" ----- 連続でペーストできるようになる
+
+""""""""""""""""""""""""""""""""""""""""
+" function: 連続ペースト
+""""""""""""""""""""""""""""""""""""""""
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''
@@ -283,7 +320,9 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 
-" ----- syntax自動実行
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: syntstic自動実行
+""""""""""""""""""""""""""""""""""""""""
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -293,15 +332,23 @@ vmap <silent> <expr> p <sid>Repl()
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_ruby_checkers=['rubocop', 'mri']
 
-" ----- rubocopの設定
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: rubocop
+""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_ruby_rubocop_exe = 'rbenv exec bundle exec rubocop'
 let g:vimrubocop_rubocop_cmd = 'rbenv exec bundle exec rubocop'
 " let g:vimrubocop_config = '' # TODO " 開いているファイルのプロジェクトのrubocopが有効になるようにする
 
-" accelerated-jk
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: accelerated-jk
+""""""""""""""""""""""""""""""""""""""""
 nmap j <Plug>(accelerated_jk_gj_position)
 nmap k <Plug>(accelerated_jk_gk_position)
-" ---------- tab機能充実化
+
+
+""""""""""""""""""""""""""""""""""""""""
+" function: tabline
+""""""""""""""""""""""""""""""""""""""""
 " Anywhere SID.
 function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
@@ -346,13 +393,13 @@ map <silent> [Tag]n :tab<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
-" ---------- tab機能充実化
 
-nnoremap <C-p> <Up>
-" autocmd CursorMovedI * :call vimproc#system_bg($HOME . "/bin/vim-key-sound.rb '" . getline('.')[col('.') - 2] . "'")
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: neosnippet
+""""""""""""""""""""""""""""""""""""""""
 " snippet Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-j>     <Plug>(neosnippet_expand_or_jump)
 smap <C-j>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-j>     <Plug>(neosnippet_expand_target)
 
@@ -370,14 +417,24 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: openbrowser
+""""""""""""""""""""""""""""""""""""""""
 " openbrowser カーソル下のURLや単語をブラウザで開く
 nmap <Leader>b <Plug>(openbrowser-smart-search)
 vmap <Leader>b <Plug>(openbrowser-smart-search)
 
-" cow コメントの追加・削除を行なう
+
+""""""""""""""""""""""""""""""""""""""""
+" plugin setting: cow コメントの追加・削除を行なう
+""""""""""""""""""""""""""""""""""""""""
 " nmap <Leader>/ <Plug>(caw:zeropos:toggle)
 " vmap <Leader>/ <Plug>(caw:zeropos:toggle)
-"
-" ctags
+
+
+""""""""""""""""""""""""""""""""""""""""
+" optional setting: ctags
+""""""""""""""""""""""""""""""""""""""""
 set tags
 nnoremap <silent> <leader>] :TlistOpen<CR>
