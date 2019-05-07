@@ -81,6 +81,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ];then
  . $(brew --prefix)/etc/bash_completion
 fi
 
+alias dtf="cd ~/dotfiles/"
 # git情報表示系
 alias st="git status"
 alias lg="git log"
@@ -94,7 +95,7 @@ alias ada="git add --all"
 alias cm="git commit -v "
 alias am="cm --amend"
 alias cma="cm  --all"
-alias cmm="cm commit -m"
+alias cmm="git commit -m"
 
 # push
 alias push="git push origin HEAD"
