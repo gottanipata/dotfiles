@@ -52,9 +52,37 @@ if dein#load_state('/Users/user/.cache/dein')
   call dein#add('todesking/ruby_hl_lvar.vim', { 'on_ft': 'ruby' }) " local変数をハイライトする
   call dein#add('ngmy/vim-rubocop', { 'on_ft': 'ruby' })
 
-
   " elm plugins
   call dein#add('ElmCast/elm-vim', { 'on_ft': 'elm' })
+
+  " csv
+  call dein#add('mechatroner/rainbow_csv')
+
+  " html
+  call dein#add('mattn/emmet-vim', { 'on_ft': 'html' })
+
+  "markdown
+  call dein#add('plasticboy/vim-markdown', { 'on_ft': 'markdown' })
+  call dein#add('aklt/plantuml-syntax')
+
+  " javascript react
+"   { 'for': ['javascript', 'javascript.jsx'] }
+"   , { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('pangloss/vim-javascript', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('othree/yajs.vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('othree/es.next.syntax.vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('othree/javascript-libraries-syntax.vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('othree/html5.vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('maxmellon/vim-jsx-pretty', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  call dein#add('ternjs/tern_for_vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+  " kotlin
+  " git clone https://github.com/udalov/kotlin-vim.git ~/.vim/pack/plugins/start/kotlin-vim
+
+  "call dein#add('udalov/kotlin-vim')
+
+  " js
+  "call dein#add('othree/yajs.vim')
+
   " call dein#add('')
   " Required:
   call dein#end()
