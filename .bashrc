@@ -26,7 +26,7 @@ chmod 700 $SCREENDIR
 
 #色を変えるための設定 正しい設定 (2009-10-01追加)
 #source ~/.git-prompt.sh
-export PATH="$PATH:/Users/user/Library/Android/sdk/platform-tools"
+
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:~/bin"
@@ -34,47 +34,52 @@ export PATH="$PATH:~/bin"
 #export NODE_PATH="/Users/user/.nodebrew/node/v8.1.3/lib/node_modules:/Users/user/.nodebrew/node/v8.1.3/bin"
 export PATH="$PATH:~/.local/bin"
 export PATH="/Users/user/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH=/usr/local/Cellar/openssl/1.0.2l/bin:/usr/local/opt/imagemagick@6/bin:/Users/user/.rbenv/shims:/Users/user/.rbenv/bin:/Users/user/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/opt/ImageMagick/bin:~/bin:~/.nodebrew/node/v8.1.3/bin
 eval "$(rbenv init -)"
 
-#~/bin/login.sh
-# docker
-alias dc="docker-compose "
-
-# ruby
-alias rem="rbenv exec gem"
-alias ras="cd ~/dev/2018/practice/rails/"
-alias r="rails "
-
-alias ll="ls -l"
-# vim
-alias vrc="vim ~/.vimrc"
-alias btz="cd ~/cpuminer"
-#alias lgf="ht;cd log-formatter/; coffee -w -c -b -o js/ coffee"
+# 基本コマンド系
 alias ls="ls -G"
+alias ll="ls -l"
 alias la="ls -la"
-alias dv="cd ~/dev/"
-alias updatedb='sudo /usr/libexec/locate.updatedb'
-alias htconf="sudo vi /etc/apache2/httpd.conf"
-alias ap="cd /etc/apache2"
-alias bo="vim ~/.bashrc; source ~/.bashrc"
-alias h="vim ~/.myhelp"
-alias bpdo="source ~/.bash_profile"
-alias ht="cd /Applications/MAMP/htdocs"
-alias wem="cd /Applications/MAMP/htdocs/webpmmin"
-alias cgi="cd /Applications/MAMP/htdocs/webpmmin/cgi-bin"
-#alias gglext="cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions"
-alias drop="cd /Users/user/Dropbox"
-alias mampsql="/Applications/MAMP/Library/bin/mysql -u root -p"
-alias grepos="cd ~/Dropbox/hiroki/git-repos"
+
 alias treex="tree -NF | perl -pe 's/^├── //g; s/^└── //g; s/^│\xc2\xa0\xc2\xa0\x20//g; s/├── /\t/g; s/│\xc2\xa0\xc2\xa0\x20/\t/g; s/└── /\t/g; s/    /\t/g; s/\*$//g; s/^\.\n//g;'"
+
+# cd系
+alias dv="cd ~/dev/"
+alias 19="cd ~/dev/2019"
+alias drop="cd /Users/user/Dropbox"
+alias ras="cd ~/dev/2018/practice/rails/"
+alias ap="cd /etc/apache2"
+alias dlp="cd ~/dev/2019/ruby/delax_puts/"
 
 # screen
 alias sls="screen -ls"
 alias sr="screen -r"
 alias ss="screen -S" #セッション名 # セッションに名前をつける
+
+# ruby
+alias rem="rbenv exec gem"
+alias r="rails "
+alias bundle="rbenv exec bundle"
+
+# vim
+alias vrc="vim ~/.vimrc"
+alias htconf="sudo vi /etc/apache2/httpd.conf"
+alias bo="vim ~/.bashrc; source ~/.bashrc"
+alias vimh="vim ~/.myhelp"
+
 # vim関係
 alias vm="vim -S ~/dev/.vimrc"
+alias plg="vim ~/dotfiles/vim_extend/dein.vimrc"
+
+# docker
+alias dc="docker-compose "
+
+# google extensions
 alias pr="cd ~/dev/ggl-ext/"
+alias chex="yo chrome-extension"
+#alias gglext="cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions"
 
 #git command
 if [ -f $(brew --prefix)/etc/bash_completion ];then
@@ -90,6 +95,7 @@ alias lg="git log"
 alias add="git add"
 alias ad="git add"
 alias ada="git add --all"
+alias adp="git add -p"
 
 # commit
 alias cm="git commit -v "
@@ -108,10 +114,9 @@ alias br="git branch"
 alias dif="git diff"
 alias dfh="git diff @^ @"
 
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-export PATH=/usr/local/Cellar/openssl/1.0.2l/bin:/usr/local/opt/imagemagick@6/bin:/Users/user/.rbenv/shims:/Users/user/.rbenv/bin:/Users/user/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/opt/ImageMagick/bin:~/bin:~/.nodebrew/node/v8.1.3/bin
+alias lgp="git log --pretty=oneline"
 
-alias chex="yo chrome-extension"
+
 # git関係
  # tab補完
 source ~/.git-prompt.sh
@@ -154,4 +159,16 @@ source ~/.git-prompt.sh
 export PS1='\[\033[36m\][\h: \[\e[33m\]\w\[\e[0m\]\[\e[32m\]$(__git_ps1)\[\e[0m\]\[\e[36m\]]\[\e[0m\]\n\[\033[30m\]\[\033[37m\]$ '
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-alias dlp="cd ~/dev/2019/ruby/delax_puts/"
+
+calc() {
+  awk "BEGIN {print $*}"
+}
+
+alias chrome="open -a Google\ Chrome"
+alias ctags='ctags -R -a -f tags'
+##############################
+##### documents
+##############################
+
+# 行番号を表示させない
+# history | awk '{$1=""; print $0}'
