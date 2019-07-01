@@ -42,6 +42,7 @@ if dein#load_state('/Users/user/.cache/dein')
   call dein#add('rhysd/accelerated-jk')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('vim-scripts/taglist.vim')
+  call dein#add('ervandew/supertab')
 " endcall
   "
   " ruby plugins
