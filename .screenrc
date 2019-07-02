@@ -11,10 +11,12 @@ escape ^Tt
 termcapinfo xterm* ti@:te@
 
 # tabの表示変更
-hardstatus alwayslastline "%{= kw}%-w%{-}%45L>%{=u ck}%n %t%{-}%{= kw}%+w " 
+hardstatus alwayslastline "%{= kw}%-w%{-}%45L>%{=u ck}%n %t%{-}%{= kw}%+w "
 
 # キーバインディング
 bind a title
+bind s select
+bind m number
 
 # vim開いたあとにcleerの状態にする
 altscreen on
