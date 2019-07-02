@@ -8,12 +8,18 @@ let g:airline#extensions#branch#enabled = 1
 
 """"""""""""""""""""""""""""""""""""""""
 " plugin setting: necomplete
+" plugin setting: vim-monster
 """"""""""""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#sources#omni#input_patterns = {
 " \  'ruby': '[^. *\t]\.\w*\|\h\w*::'
 " \}
-
+let g:monster#completion#backend = 'solargraph'
+" Set async completion.
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:neocomplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
 
 """"""""""""""""""""""""""""""""""""""""
 " plugin setting: vim-auto-save
@@ -22,7 +28,6 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 let g:autosave_time = 3
-
 
 """"""""""""""""""""""""""""""""""""""""
 " plugin setting: nerdtree
@@ -121,5 +126,6 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 """"""""""""""""""""""""""""""""""""""""
 " optional setting: ctags
 """"""""""""""""""""""""""""""""""""""""
-set tags
+" set tags
 nnoremap <silent> <leader>] :TlistOpen<CR>
+
