@@ -1,5 +1,5 @@
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" set fileencodings=uiso-2022-jp,euc-jp,sjis,tf-8
 let mapleader=" "
 set updatetime=1000
 
@@ -51,6 +51,12 @@ set autoindent "改行時に前の行のインデントを継続する
 " hilight
 syntax on
 set t_Co=256
+
+""""""""""""""""""""""""""""""""""""""""
+" file-type settings
+""""""""""""""""""""""""""""""""""""""""
+au FileType uml command! uml :!open Google\ Chrome %
+
 """"""""""""""""""""""""""""""""""""""""
 " base-config: mapping
 """"""""""""""""""""""""""""""""""""""""
@@ -115,33 +121,19 @@ omap s :normal vs<CR>
 
 " ----k-
 """"""""""""""""""""""""""""""""""""""""
-" base-config: mapping
+" base-config
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_base_config/mapping.vimrc
+source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
 
 """"""""""""""""""""""""""""""""""""""""
-" extend: no-indent
-" クリップボードからコピー時、インデントを崩さない
+" extensions
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_extend/no_indent_copy.vimrc
-
-""""""""""""""""""""""""""""""""""""""""
-" extend: continuous-paste
-" 連続ペースト
-""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_extend/continuous-paste.vimrc
-
-""""""""""""""""""""""""""""""""""""""""
-" extend: tabline
-""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_extend/tab-line.vimrc
-
-""""""""""""""""""""""""""""""""""""""""
-" Start to dein Scripts
-""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_extend/dein.vimrc
+source ~/dotfiles/vimrc/vim_extend/continuous-paste.vimrc
+source ~/dotfiles/vimrc/vim_extend/dein.vimrc
+source ~/dotfiles/vimrc/vim_extend/no_indent_copy.vimrc
+source ~/dotfiles/vimrc/vim_extend/tab-line.vimrc
 
 """"""""""""""""""""""""""""""""""""""""
 " source vim plugin config
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim_plugins_config.vimrc
+source ~/dotfiles/vimrc/vim_plugins_config.vimrc
