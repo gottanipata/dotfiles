@@ -7,7 +7,7 @@ chmod 700 $SCREENDIR
 eval "$(rbenv init -)"
 
 # git-prompt
-source ~/.git-prompt.sh
+source ~/dotfiles/bashrc/.git-prompt.sh
 
 # ls colorize
 export LSCOLORS=gxfxcxdxbxegedabagacad
