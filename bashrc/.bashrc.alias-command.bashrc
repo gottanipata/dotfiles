@@ -33,6 +33,7 @@ alias chex="yo chrome-extension"
 alias sls="screen -ls"
 alias sr="screen -r"
 alias ss="screen -S" #セッション名 # セッションに名前をつける
+alias scrrc="vim ~/.screenrc"
 
 #alias gglext="cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions"
 
