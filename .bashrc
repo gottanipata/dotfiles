@@ -39,7 +39,7 @@ source ~/dotfiles/bashrc/.bashrc.prompt.bashrc
 ###################################
 # user-specific-settings
 ###################################
-
+source ~/dotfiles/bashrc/.bashrc.cd-specific.bashrc
 
 ##############################
 # documents
