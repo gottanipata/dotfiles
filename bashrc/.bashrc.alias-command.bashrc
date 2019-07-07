@@ -35,3 +35,5 @@ alias sr="screen -r"
 alias ss="screen -S" #セッション名 # セッションに名前をつける
 
 #alias gglext="cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions"
+
+alias grep="grep --color=always"
