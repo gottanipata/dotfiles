@@ -6,3 +6,4 @@ alias ras="cd ~/dev/2018/practice/rails/"
 alias ap="cd /etc/apache2"
 alias dlp="cd ~/dev/2019/ruby/delax_puts/"
 
+alias gglext="cd /Users/user/Library/Application\ Support/Google/Chrome/Default/Extensions"
