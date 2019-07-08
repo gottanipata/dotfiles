@@ -4,7 +4,6 @@ if [ ! -d $SCREENDIR ];then
 fi
 chmod 700 $SCREENDIR
 
-eval "$(rbenv init -)"
 
 # git-prompt
 source ~/dotfiles/bashrc/.git-prompt.sh
