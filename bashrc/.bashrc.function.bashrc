@@ -29,3 +29,13 @@ function addcd () {
   echo '# 追加したcd先一覧'
   cat $FILE_PATH
 }
+
+ls_validater() {
+  ls
+  status=$?
+
+  if [ $status -gt 0 ] ; then
+    echo 'set default ls'
+    alias ls='ls'
+  fi
+}

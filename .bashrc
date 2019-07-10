@@ -20,14 +20,14 @@ source ~/dotfiles/bashrc/.bashrc.export.bashrc
 # general-settings
 ###################################
 ###################################
+# function: need to load at first
+source ~/dotfiles/bashrc/.bashrc.function.bashrc
+###################################
 # alias-command
 source ~/dotfiles/bashrc/.bashrc.alias-command.bashrc
 ###################################
 # cd
 source ~/dotfiles/bashrc/.bashrc.cd.bashrc
-###################################
-# function
-source ~/dotfiles/bashrc/.bashrc.function.bashrc
 ###################################
 # git
 source ~/dotfiles/bashrc/.bashrc.git.bashrc
@@ -39,6 +39,8 @@ source ~/dotfiles/bashrc/.bashrc.prompt.bashrc
 # user-specific-settings
 ###################################
 source ~/dotfiles/bashrc/.bashrc.cd-specific.bashrc
+
+ls_validater
 
 ##############################
 # documents
