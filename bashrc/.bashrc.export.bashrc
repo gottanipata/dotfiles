@@ -32,3 +32,5 @@ export PATH="$PATH:~/.local/bin"
 export PATH="/Users/user/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH=/usr/local/Cellar/openssl/1.0.2l/bin:/usr/local/opt/imagemagick@6/bin:/Users/user/.rbenv/shims:/Users/user/.rbenv/bin:/Users/user/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/opt/ImageMagick/bin:~/bin:~/.nodebrew/node/v8.1.3/bin
+
+eval "$(rbenv init -)"

@@ -128,4 +128,14 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 """"""""""""""""""""""""""""""""""""""""
 " set tags
 nnoremap <silent> <leader>] :TlistOpen<CR>
+nnoremap <C-]> g<C-]>
 
+let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -R {OPTIONS} {DIRECTORY} 2>/dev/null"
+let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R {OPTIONS} `bundle show --paths` 2>/dev/null"
+
+
+""""""""""""""""""""""""""""""""""""""""
+" optional setting: tagbar
+""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <Leader>t :TagbarToggle<CR>

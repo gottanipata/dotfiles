@@ -43,6 +43,9 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('vim-scripts/taglist.vim')
   call dein#add('ervandew/supertab')
+
+  call dein#add('szw/vim-tags')
+  call dein#add('majutsushi/tagbar')
 " endcall
   "
   " ruby plugins
