@@ -62,7 +62,7 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('mechatroner/rainbow_csv')
 
   " html
-  call dein#add('mattn/emmet-vim', { 'on_ft': 'html' })
+  call dein#add('mattn/emmet-vim', { 'on_ft': ['html','vue'] })
 
   "markdown
   call dein#add('plasticboy/vim-markdown', { 'on_ft': 'markdown' })
@@ -78,6 +78,9 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('othree/html5.vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
   call dein#add('maxmellon/vim-jsx-pretty', { 'on_ft': ['javascript', 'javascript.jsx'] })
   call dein#add('ternjs/tern_for_vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
+
+  " vue
+  call dein#add('posva/vim-vue')
   " kotlin
   " git clone https://github.com/udalov/kotlin-vim.git ~/.vim/pack/plugins/start/kotlin-vim
 
