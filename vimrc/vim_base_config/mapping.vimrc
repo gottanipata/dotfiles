@@ -65,6 +65,7 @@ nnoremap <BS> gg
 " plugin setting:  useing JIS and US keyboard
 """"""""""""""""""""""""""""""""""""""""
 nnoremap ' :
+vnoremap ' :
 noremap <C-@> <ESC>
 noremap! <C-@> <ESC>
 
