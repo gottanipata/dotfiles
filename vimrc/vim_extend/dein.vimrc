@@ -89,6 +89,11 @@ if dein#load_state($HOME . '/.cache/dein')
   " js
   "call dein#add('othree/yajs.vim')
 
+  "toml
+  call dein#add('cespare/vim-toml')
+  call dein#add('Shougo/context_filetype.vim')
+  call dein#add('osyo-manga/vim-precious')
+
   " call dein#add('')
   " Required:
   call dein#end()
