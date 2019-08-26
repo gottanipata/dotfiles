@@ -17,45 +17,58 @@ if dein#load_state($HOME . '/.cache/dein')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
-  call dein#add('vim-scripts/vim-auto-save')
-  call dein#add('tomtom/tcomment_vim') " gcc$B$G$-$k$h$&$K$J$k(B
-  call dein#add('terryma/vim-expand-region') " vvv$B$GA*BrHO0O9-$2$k(B
-  call dein#add('bronson/vim-trailing-whitespace') " $BKvHx$N(Bspace$B$r2D;k2=(B
+  " outline-display
   call dein#add('vim-airline/vim-airline')
+  call dein#add('Yggdroot/indentLine')
+
+    " git
+  call dein#add('tpope/vim-fugitive') " git command from vim
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('Townk/vim-autoclose') " $B<+F0$GJD$8%?%0$rIU$1$k(B
+
+  " editting display
+  " nerdtree
   call dein#add('scrooloose/nerdtree')
   call dein#add('jistr/vim-nerdtree-tabs')
   call dein#add('Xuyuanp/nerdtree-git-plugin')
+
+
+  " enhance keybinding
+  call dein#add('tomtom/tcomment_vim') " gcc$B$G$-$k$h$&$K$J$k(B
+  call dein#add('terryma/vim-expand-region') " vvv$B$GA*BrHO0O9-$2$k(B
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('simeji/winresizer') " to change window size more easer
+
+  " vim拡張
+  call dein#add('vim-scripts/vim-auto-save')
+  call dein#add('bronson/vim-trailing-whitespace') " $BKvHx$N(Bspace$B$r2D;k2=(B
+  call dein#add('rhysd/accelerated-jk')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
+  " 補完
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('Yggdroot/indentLine')
-  call dein#add('rhysd/accelerated-jk')
-  call dein#add('tyru/caw.vim')
-  call dein#add('tyru/open-browser.vim')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('simeji/winresizer') " to change window size more easer
-  call dein#add('rhysd/accelerated-jk')
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-  call dein#add('vim-scripts/taglist.vim')
-  call dein#add('ervandew/supertab')
 
+  " tag一覧表示
   call dein#add('szw/vim-tags')
   call dein#add('majutsushi/tagbar')
-" endcall
-  "
-  " ruby plugins
+
+  " call dein#add('tyru/caw.vim')
+  call dein#add('vim-scripts/taglist.vim') " vars methods list
+  call dein#add('ervandew/supertab') " methods list with ctags
+
+  " ruby
   call dein#add('osyo-manga/vim-monster', { 'on_ft': 'ruby' }) " <C-x><C-o>$B$GJd403+;O(B
+  call dein#add('tpope/vim-endwise')
+  call dein#add('Townk/vim-autoclose') " $B<+F0$GJD$8%?%0$rIU$1$k(B
     " gem install rcodetools
-    " https://github.com/osyo-manga/vim-monster
+    " https://github.com/osyo-manga/vim-uonster
   call dein#add('todesking/ruby_hl_lvar.vim', { 'on_ft': 'ruby' }) " local$BJQ?t$r%O%$%i%$%H$9$k(B
   call dein#add('ngmy/vim-rubocop', { 'on_ft': 'ruby' })
 
-  " elm plugins
+  " elm
   call dein#add('ElmCast/elm-vim', { 'on_ft': 'elm' })
 
   " csv
@@ -79,6 +92,7 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('maxmellon/vim-jsx-pretty', { 'on_ft': ['javascript', 'javascript.jsx'] })
   call dein#add('ternjs/tern_for_vim', { 'on_ft': ['javascript', 'javascript.jsx'] })
 
+
   " vue
   call dein#add('posva/vim-vue')
   " kotlin
@@ -91,7 +105,7 @@ if dein#load_state($HOME . '/.cache/dein')
 
   "toml
   call dein#add('cespare/vim-toml')
-  call dein#add('Shougo/context_filetype.vim')
+  call dein#add('Shougo/context_filetype.vim') " 依存関係
   call dein#add('osyo-manga/vim-precious')
 
   " call dein#add('')
