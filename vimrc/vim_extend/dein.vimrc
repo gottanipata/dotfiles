@@ -9,7 +9,7 @@ let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 " Required:
 if dein#load_state($HOME . '/.cache/dein')
   call dein#begin($HOME . '/.cache/dein')
-  call dein#load_toml(s:toml_tile)
+  call dein#load_toml(s:toml_file)
   call dein#end()
   call dein#save_state()
 endif
