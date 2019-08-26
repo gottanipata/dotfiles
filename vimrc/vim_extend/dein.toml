@@ -1,0 +1,301 @@
+# about dein hooks
+# Junp to link by 'Leader + b'
+# https://qiita.com/delphinus/items/cd221a450fd23506e81a
+
+##################
+# init
+##################
+[[plugins]]
+repos = $HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+
+##################
+# outline-desplay
+##################
+[[plugins]]
+repos = 'vim-airline/vim-airline'
+hook_add = '''
+  let g:airline#extensions#branch#enabled = 1
+'''
+[[plugins]] # show indent line
+repos = 'Yggdroot/indentLine'
+
+
+##################
+# git
+##################
+[[plugins]]
+repos = 'airblade/vim-gitgutter'
+
+[[plugins]] # git command from vim
+repos = 'tpope/vim-fugitive'
+
+##################
+# nerdtree
+##################
+[[plugins]]
+repos = 'scrooloose/nerdtree'
+hook_add = '''
+  map <Leader>n <plug>NERDTreeTabsToggle<CR>
+'''
+
+[[plugins]]
+repos = 'jistr/vim-nerdtree-tabs'
+
+[[plugins]]
+repos = 'Xuyuanp/nerdtree-git-plugin'
+
+##################
+# enhance keybind, mapping
+##################
+[[plugins]]
+repos = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repos = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+  let g:ctrlp_map = ''
+  nmap <Leader>p :CtrlP<CR>
+  let g:ctrlp_show_hidden = 1
+'''
+
+[[plugins]]
+repos = 'terryma/vim-expand-region'
+hook_add = '''
+  vmap v <Plug>(expand_region_expand)
+  vmap <C-v> <Plug>(expand_region_shrink)
+'''
+
+[[plugins]]
+repos = 'tyru/open-browser.vim'
+hook_add = '''
+  nmap <Leader>b <Plug>(openbrowser-smart-search)
+  vmap <Leader>b <Plug>(openbrowser-smart-search)
+'''
+[[plugins]]
+repos = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_start_key = '<C-(>'
+  let g:winresizer_gui_start_key = '<C-)>'
+  noremap <Leader>w :WinResizerStartResize<CR>
+'''
+
+##################
+# vim拡張: 見えない系
+##################
+[[plugins]]
+repos = 'vim-scripts/vim-auto-save'
+hook_add = '''
+  let g:auto_save = 1  " enable AutoSave on Vim startup
+  let g:auto_save_no_updatetime = 1
+  let g:auto_save_in_insert_mode = 0
+  let g:autosave_time = 3
+'''
+
+[[plugins]]
+repos = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repos = 'rhysd/accelerated-jk'
+hook_add = '''
+  nmap j <Plug>(accelerated_jk_gj_position)
+  nmap k <Plug>(accelerated_jk_gk_position)
+'''
+
+[[plugins]]
+repos = 'thinca/vim-quickrun'
+hook_add = '''
+'''
+
+[[plugins]]
+repo  = 'Shougo/vimproc.vim'
+build = 'make'
+
+##################
+# complete
+##################
+[[plugins]]
+repos = 'Shougo/neocomplete.vim'
+hook_add = '''
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#sources#omni#input_patterns = {
+  \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+  \}
+'''
+
+[[plugins]]
+repos = ''
+
+[[plugins]]
+repos = 'Shougo/neosnippet.vim'
+hook_add = '''
+  " snippet Plugin key-mappings.
+  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+  imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-j>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+  "imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+
+[[plugins]]
+repos = 'Shougo/neosnippet-snippets'
+
+
+##################
+# vim-tags
+##################
+[[plugins]]
+repos = 'szw/vim-tags'
+
+[[plugins]]
+repos = 'majutsushi/tagbar'
+hook_add = '''
+  nnoremap <Leader>t :TagbarToggle<CR>
+'''
+
+# [[plugins]]
+# repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'ervandew/supertab' # methods list with ctags
+
+####################################
+# language specific plugins bellow
+####################################
+
+##################
+# ruby
+##################
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_ft = ['ruby']
+hook_add = '''
+  let g:monster#completion#backend = 'solargraph'
+  " Set async completion.
+  let g:monster#completion#rcodetools#backend = "async_rct_complete"
+'''
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'todesking/ruby_hl_lvar.vim'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+on_ft = ['ruby']
+hook_add = '''
+let g:syntastic_ruby_rubocop_exe = 'rbenv exec bundle exec rubocop'
+let g:vimrubocop_rubocop_cmd = 'rbenv exec bundle exec rubocop'
+" let g:vimrubocop_config = ''
+'''
+
+
+##################
+# csv
+##################
+[[plugins]]
+repo = 'mechatroner/rainbow_csv'
+
+
+##################
+# markdown
+##################
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown','md']
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+
+
+##################
+# javascript
+##################
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'ternjs/tern_for_vim'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+
+##################
+# vue
+##################
+[[plugins]]
+repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','vue']
+
+
+##################
+# elm
+##################
+[[plugins]]
+repo = 'ElmCast/elm-vim'
+on_ft = ['elm']
+
+
+##################
+# kotlin
+##################
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+
+
+##################
+# toml
+##################
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim' # 依存関係
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+
