@@ -6,53 +6,53 @@
 # init
 ##################
 [[plugins]]
-repos = $HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim'
+repo = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 
 
 ##################
 # outline-desplay
 ##################
 [[plugins]]
-repos = 'vim-airline/vim-airline'
+repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#branch#enabled = 1
 '''
 [[plugins]] # show indent line
-repos = 'Yggdroot/indentLine'
+repo = 'Yggdroot/indentLine'
 
 
 ##################
 # git
 ##################
 [[plugins]]
-repos = 'airblade/vim-gitgutter'
+repo = 'airblade/vim-gitgutter'
 
 [[plugins]] # git command from vim
-repos = 'tpope/vim-fugitive'
+repo = 'tpope/vim-fugitive'
 
 ##################
 # nerdtree
 ##################
 [[plugins]]
-repos = 'scrooloose/nerdtree'
+repo = 'scrooloose/nerdtree'
 hook_add = '''
   map <Leader>n <plug>NERDTreeTabsToggle<CR>
 '''
 
 [[plugins]]
-repos = 'jistr/vim-nerdtree-tabs'
+repo = 'jistr/vim-nerdtree-tabs'
 
 [[plugins]]
-repos = 'Xuyuanp/nerdtree-git-plugin'
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 ##################
 # enhance keybind, mapping
 ##################
 [[plugins]]
-repos = 'tomtom/tcomment_vim'
+repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repos = 'ctrlpvim/ctrlp.vim'
+repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
   let g:ctrlp_map = ''
   nmap <Leader>p :CtrlP<CR>
@@ -60,20 +60,20 @@ hook_add = '''
 '''
 
 [[plugins]]
-repos = 'terryma/vim-expand-region'
+repo = 'terryma/vim-expand-region'
 hook_add = '''
   vmap v <Plug>(expand_region_expand)
   vmap <C-v> <Plug>(expand_region_shrink)
 '''
 
 [[plugins]]
-repos = 'tyru/open-browser.vim'
+repo = 'tyru/open-browser.vim'
 hook_add = '''
   nmap <Leader>b <Plug>(openbrowser-smart-search)
   vmap <Leader>b <Plug>(openbrowser-smart-search)
 '''
 [[plugins]]
-repos = 'simeji/winresizer'
+repo = 'simeji/winresizer'
 hook_add = '''
   let g:winresizer_start_key = '<C-(>'
   let g:winresizer_gui_start_key = '<C-)>'
@@ -84,7 +84,7 @@ hook_add = '''
 # vim拡張: 見えない系
 ##################
 [[plugins]]
-repos = 'vim-scripts/vim-auto-save'
+repo = 'vim-scripts/vim-auto-save'
 hook_add = '''
   let g:auto_save = 1  " enable AutoSave on Vim startup
   let g:auto_save_no_updatetime = 1
@@ -93,17 +93,17 @@ hook_add = '''
 '''
 
 [[plugins]]
-repos = 'bronson/vim-trailing-whitespace'
+repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
-repos = 'rhysd/accelerated-jk'
+repo = 'rhysd/accelerated-jk'
 hook_add = '''
   nmap j <Plug>(accelerated_jk_gj_position)
   nmap k <Plug>(accelerated_jk_gk_position)
 '''
 
 [[plugins]]
-repos = 'thinca/vim-quickrun'
+repo = 'thinca/vim-quickrun'
 hook_add = '''
 '''
 
@@ -115,7 +115,7 @@ build = 'make'
 # complete
 ##################
 [[plugins]]
-repos = 'Shougo/neocomplete.vim'
+repo = 'Shougo/neocomplete.vim'
 hook_add = '''
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#sources#omni#input_patterns = {
@@ -124,10 +124,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repos = ''
-
-[[plugins]]
-repos = 'Shougo/neosnippet.vim'
+repo = 'Shougo/neosnippet.vim'
 hook_add = '''
   " snippet Plugin key-mappings.
   " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
@@ -151,23 +148,20 @@ hook_add = '''
 '''
 
 [[plugins]]
-repos = 'Shougo/neosnippet-snippets'
+repo = 'Shougo/neosnippet-snippets'
 
 
 ##################
 # vim-tags
 ##################
 [[plugins]]
-repos = 'szw/vim-tags'
+repo = 'szw/vim-tags'
 
 [[plugins]]
-repos = 'majutsushi/tagbar'
+repo = 'majutsushi/tagbar'
 hook_add = '''
   nnoremap <Leader>t :TagbarToggle<CR>
 '''
-
-# [[plugins]]
-# repo = 'tyru/caw.vim'
 
 [[plugins]]
 repo = 'ervandew/supertab' # methods list with ctags
