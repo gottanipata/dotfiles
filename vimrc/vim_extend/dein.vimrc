@@ -6,6 +6,14 @@ endif
 set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
 " Required:
 if dein#load_state($HOME . '/.cache/dein')
   call dein#begin($HOME . '/.cache/dein')
