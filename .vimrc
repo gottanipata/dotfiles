@@ -30,6 +30,7 @@ tmap <C-W>' <C-W>N
 " ---------- start to  display setting
 " let mapleader = “\<Space>”
 " codeinfo
+set clipboard+=unnamed
 set title
 set number
 set wrap " 折り返しする
