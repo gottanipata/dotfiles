@@ -8,6 +8,14 @@
 [[plugins]]
 repo = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 
+##################
+# colorschemes
+##################
+[[plugins]]
+repo = 'tomasr/molokai'
+hook_add = '''
+  let g:molokai_original = 1
+'''
 
 ##################
 # outline-desplay
