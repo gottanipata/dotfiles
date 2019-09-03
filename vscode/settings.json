@@ -1,0 +1,23 @@
+{
+    "python.pythonPath": "/anaconda3/bin/python",
+    "editor.fontSize": 15,
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "workbench.colorTheme": "Monokai",
+    "editor.tabCompletion": "on",
+    "editor.fontFamily": "'Ricty Diminished Regular',Menlo, Monaco, 'Courier New', monospace",
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.colorCustomizations": {
+        // "terminal.foreground": "#d66161",
+        // "terminal.background": "#5d9486",
+        // "terminal.font-size": "14pt"
+    },
+    "window.zoomLevel": -1,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontSize": 14,
+    "emmet.includeLanguages": {
+        "vue-html",
+        "vue"
+    }
+}
