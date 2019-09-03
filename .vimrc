@@ -132,10 +132,3 @@ source ~/dotfiles/vimrc/vim_extend/continuous-paste.vimrc
 source ~/dotfiles/vimrc/vim_extend/dein.vimrc
 source ~/dotfiles/vimrc/vim_extend/no_indent_copy.vimrc
 source ~/dotfiles/vimrc/vim_extend/tab-line.vimrc
-
-""""""""""""""""""""""""""""""""""""""""
-" source vim plugin config
-""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/vim_plugins_config.vimrc
-
-autocmd FileType vue syntax sync fromstart
