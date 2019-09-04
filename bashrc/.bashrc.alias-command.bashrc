@@ -17,6 +17,7 @@ alias bundle="rbenv exec bundle"
 alias vrc="vim ~/.vimrc"
 alias htconf="sudo vi /etc/apache2/httpd.conf"
 alias bo="vim ~/.bashrc; source ~/.bashrc"
+alias brl="source ~/.bashrc"
 alias vimh="vim ~/.myhelp"
 
 # vim関係
