@@ -39,3 +39,7 @@ ls_validater() {
     alias ls='ls'
   fi
 }
+
+function dict() {
+  grep -E "$1" ~/dotfiles/dict/en-to-ja.txt -A 1 -wi --color
+}
