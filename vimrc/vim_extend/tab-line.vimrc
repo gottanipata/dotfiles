@@ -23,23 +23,22 @@ function! s:my_tabline()  "{{{
   return s
 endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2 " $B>o$K%?%V%i%$%s$rI=<((B
+set showtabline=2 " 常にタブラインを表示
 
 " The prefix key.
-nnoremap    [Tag]   <Nop>
-nmap    t [Tag]
+nnoremap  [TABCMD] <nop>
+nmap    t [TABCMD]
 " Tab jump
 for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+  execute 'nnoremap <silent> [TABCMD]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
-" t1 $B$G(B1$BHV:8$N%?%V!"(Bt2 $B$G(B1$BHV:8$+$i(B2$BHVL\$N%?%V$K%8%c%s%W(B
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
-" tc $B?7$7$$%?%V$r0lHV1&$K:n$k(B
-map <silent> [Tag]x :tabclose<CR>
-" tx $B%?%V$rJD$8$k(B
-map <silent> [Tag]n :tab<CR>
-" tn $B<!$N%?%V(B
-map <silent> [Tag]p :tabprevious<CR>
-" tp $BA0$N%?%V(B
-
+map <silent> [TABCMD]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [TABCMD]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [TABCMD]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [TABCMD]p :tabprevious<CR>
+" tp 前のタブ
