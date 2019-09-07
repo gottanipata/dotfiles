@@ -127,9 +127,13 @@ omap s :normal vs<CR>
 source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
 
 """"""""""""""""""""""""""""""""""""""""
+" dein
+""""""""""""""""""""""""""""""""""""""""
+source ~/dotfiles/vimrc/vim_extend/dein.vimrc
+
+""""""""""""""""""""""""""""""""""""""""
 " extensions
 """"""""""""""""""""""""""""""""""""""""
 source ~/dotfiles/vimrc/vim_extend/continuous-paste.vimrc
-source ~/dotfiles/vimrc/vim_extend/dein.vimrc
 source ~/dotfiles/vimrc/vim_extend/no_indent_copy.vimrc
 source ~/dotfiles/vimrc/vim_extend/tab-line.vimrc
