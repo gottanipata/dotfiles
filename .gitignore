@@ -1,2 +1,5 @@
 /bashrc/.bashrc.cd-specific.bashrc
 /bashrc/.bashrc.export.bashrc
+
+# dict
+/dict/*.txt
