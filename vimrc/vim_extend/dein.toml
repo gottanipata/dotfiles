@@ -248,15 +248,15 @@ on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = ['javascript', 'javascript.jsx']
+on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
 [[plugins]]
 repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript', 'javascript.jsx']
+on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
 [[plugins]]
 repo = 'othree/javascript-libraries-syntax.vim'
-on_ft = ['javascript', 'javascript.jsx']
+on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
 [[plugins]]
 repo = 'othree/html5.vim'
@@ -264,18 +264,18 @@ on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript', 'javascript.jsx','javascript.tsx']
+on_ft = ['javascript', 'javascript.jsx','javascript.tsx','typescript']
 
 [[plugins]]
 repo = 'ternjs/tern_for_vim'
-on_ft = ['javascript', 'javascript.jsx']
+on_ft = ['javascript', 'javascript.jsx','typescript']
 
 [[plugins]]
 repo = 'othree/yajs.vim'
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
-on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx']
+on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
 
 ##################
