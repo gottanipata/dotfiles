@@ -194,7 +194,7 @@ repo = 'ervandew/supertab' # methods list with ctags
 ##################
 [[plugins]]
 repo = 'osyo-manga/vim-monster'
-on_ft = ['ruby']
+on_ft = ['ruby', 'eruby', 'haml','slim','erb']
 hook_add = '''
   let g:monster#completion#backend = 'solargraph'
   " Set async completion.
