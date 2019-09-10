@@ -220,6 +220,9 @@ let g:vimrubocop_rubocop_cmd = 'rbenv exec bundle exec rubocop'
 " let g:vimrubocop_config = ''
 '''
 
+[[plugins]]
+repo = 'tpope/vim-haml'
+on_ft = ['haml']
 
 ##################
 # csv
