@@ -11,6 +11,7 @@ alias ctags='ctags -R -a -f tags'
 # ruby
 alias rem="rbenv exec gem"
 alias r="rails "
+alias be="bundle exec "
 
 # vim
 alias vrc="vim ~/.vimrc"
