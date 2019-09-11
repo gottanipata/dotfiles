@@ -139,3 +139,6 @@ source ~/dotfiles/vimrc/vim_extend/no_indent_copy.vimrc
 source ~/dotfiles/vimrc/vim_extend/tab-line.vimrc
 
 command! Tml :edit ~/dotfiles/vimrc/vim_extend/dein.toml
+
+autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
+autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
