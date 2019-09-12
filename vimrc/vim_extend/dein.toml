@@ -307,6 +307,12 @@ on_ft = ['elm']
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 
+##################
+# graphql
+##################
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['gql', 'graphql', 'Relay.QL']
 
 ##################
 # toml
