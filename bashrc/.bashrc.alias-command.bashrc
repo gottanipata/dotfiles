@@ -20,6 +20,7 @@ alias bo="vim ~/.bashrc; source ~/.bashrc"
 alias brl="source ~/.bashrc"
 alias vimh="vim ~/.myhelp"
 alias tml='vim ~/dotfiles/vimrc/vim_extend/dein.toml'
+alias fishconf="vim ~/.config/fish/config.fish; bax source ~/.config/fish/config.fish;"
 
 # vim関係
 alias vm="vim -S ~/dev/.vimrc"
