@@ -27,7 +27,10 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#branch#enabled = 1
+  " see this site: https://github.com/vim-airline/vim-airline/wiki/Screenshots
+  let g:airline_theme = 'kalisi'
 '''
+
 [[plugins]] # show indent line
 repo = 'Yggdroot/indentLine'
 
