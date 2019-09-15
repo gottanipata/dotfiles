@@ -142,3 +142,4 @@ command! Tml :edit ~/dotfiles/vimrc/vim_extend/dein.toml
 
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.fish  set filetype=fish

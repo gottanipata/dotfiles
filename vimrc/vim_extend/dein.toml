@@ -326,3 +326,7 @@ repo = 'Shougo/context_filetype.vim' # 依存関係
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 
+[[plugins]]
+repo = 'dag/vim-fish'
+on_ft = ['fish']
+
