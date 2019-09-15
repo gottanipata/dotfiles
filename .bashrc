@@ -1,10 +1,3 @@
-export SCREENDIR=$HOME/.screen
-if [ ! -d $SCREENDIR ];then
-  mkdir -p $SCREENDIR
-fi
-chmod 700 $SCREENDIR
-
-
 # git-prompt
 source ~/dotfiles/bashrc/.git-prompt.sh
 
