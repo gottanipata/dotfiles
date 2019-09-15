@@ -21,6 +21,9 @@ hook_add = '''
 # outline-desplay
 ##################
 [[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#branch#enabled = 1
