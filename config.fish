@@ -11,3 +11,5 @@ end
 # ls setting
 export LSCOLORS=cxfxcxdxbxegedabagacad
 
+# imort bashrc
+bax source ./dotfiles/.bashrc
