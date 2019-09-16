@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # install fisherman
 if not functions -q fisher
@@ -12,4 +13,4 @@ end
 export LSCOLORS=cxfxcxdxbxegedabagacad
 
 # imort bashrc
-bax source ./dotfiles/.bashrc
+bax source ~/dotfiles/.bashrc
