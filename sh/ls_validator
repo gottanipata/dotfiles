@@ -1,0 +1,6 @@
+#!/bin/sh
+ls > /dev/null
+if [ $? -gt 0 ] ; then
+  echo 'set default ls'
+  alias ls='ls'
+fi

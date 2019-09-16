@@ -13,10 +13,6 @@ source ~/dotfiles/bashrc/.bashrc.export.bashrc
 ###################################
 # general-settings
 ###################################
-###################################
-# function: need to load at first
-source ~/dotfiles/bashrc/.bashrc.function.bashrc
-###################################
 # alias-command
 source ~/dotfiles/bashrc/.bashrc.alias-command.bashrc
 ###################################
@@ -34,7 +30,7 @@ source ~/dotfiles/bashrc/.bashrc.prompt.bashrc
 ###################################
 source ~/dotfiles/bashrc/.bashrc.cd-specific.bashrc
 
-ls_validater
+ls_validator
 
 ##############################
 # documents

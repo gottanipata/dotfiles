@@ -1,0 +1,19 @@
+#!/bin/sh
+# set alias
+ALIAS=$1;
+echo "alias名 $1"
+
+# save dir name
+FILE_PATH="$HOME/dotfiles/bashrc/.bashrc.cd-specific.bashrc"
+echo "保存先ファイル名 $FILE_PATH"
+
+# pwd
+CURRENT_DIR=$(pwd);
+echo "alias $ALIAS=\"cd '$CURRENT_DIR'\"" >> $FILE_PATH
+
+# reload
+source $FILE_PATH
+
+echo ''
+echo '# 追加したcd先一覧'
+cat $FILE_PATH

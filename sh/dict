@@ -1,0 +1,2 @@
+#!/bin/sh
+grep -E "$1" ~/dotfiles/dict/en-to-ja.txt -A 1 -wi --color
