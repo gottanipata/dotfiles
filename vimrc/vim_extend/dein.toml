@@ -105,6 +105,9 @@ hook_add = '''
   noremap <Leader>w :WinResizerStartResize<CR>
 '''
 
+[[plugins]]
+repo = 'tpope/vim-abolish'
+
 ##################
 # vim拡張: 見えない系
 ##################
