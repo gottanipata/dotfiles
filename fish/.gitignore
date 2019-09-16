@@ -1,2 +1,4 @@
 /functions/*
 /functions/my
+!/functions/__load_my_funcs.fish
+

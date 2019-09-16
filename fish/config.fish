@@ -17,3 +17,6 @@ alias sf="source ~/.config/fish/config.fish;"
 alias fishconf="vim ~/.config/fish/config.fish;"
 
 set -U FZF_LEGACY_KEYBINDINGS 0
+
+# imort my functions
+__load_my_funcs
