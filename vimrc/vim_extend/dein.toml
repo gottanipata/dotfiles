@@ -243,8 +243,12 @@ repo = 'mechatroner/rainbow_csv'
 ##################
 # markdown
 ##################
+# [[plugins]] # a little heavy for my environment
+# repo = 'plasticboy/vim-markdown'
+# on_ft = ['markdown','md']
+
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
+repo = 'gabrielelana/vim-markdown'
 on_ft = ['markdown','md']
 
 [[plugins]]
