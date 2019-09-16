@@ -7,6 +7,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 ###################################
 # export
+export PATH=$HOME/dotfiles/sh/:$PATH
 source ~/dotfiles/bashrc/.bashrc.export.bashrc
 
 ###################################
