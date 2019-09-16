@@ -12,3 +12,7 @@ export LSCOLORS=cxfxcxdxbxegedabagacad
 
 # imort bashrc
 bax source ~/dotfiles/.bashrc
+
+alias sf="source ~/.config/fish/config.fish;"
+alias fishconf="vim ~/.config/fish/config.fish;"
+
