@@ -115,4 +115,5 @@ nnoremap sQ :<C-u>bd<CR>
 """"""""""""""""""""""""""""""""""""""""
 " buffer list
 nnoremap <Leader>l :ls<CR>:b<Space>
+nnoremap <Leader>r :reg<CR>:put<Space>
 
