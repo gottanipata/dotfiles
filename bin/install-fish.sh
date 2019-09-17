@@ -6,9 +6,15 @@ if [ ! $? -eq 0 ] ; then
   echo 'start to install'
   brew install fish;
 
-  chsh $(which fish);
+  FISH =$(which fish)
+  chsh $FISH;
+  curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
   echo "changed default shell as fish"
   echo "please reopen your terminal"
+  echo "and do this command"
+  echo ""
+  echo "fisher"
   exit 0
 fi
 
