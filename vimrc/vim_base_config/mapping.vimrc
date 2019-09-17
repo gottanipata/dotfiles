@@ -108,4 +108,11 @@ nnoremap sQ :<C-u>bd<CR>
 " call submode#map('bufmove', 'n', '', '<', '<C-w><')
 " call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 " call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-"
+
+
+""""""""""""""""""""""""""""""""""""""""
+" enhancing settings
+""""""""""""""""""""""""""""""""""""""""
+" buffer list
+nnoremap <Leader>l :ls<CR>:b<Space>
+
