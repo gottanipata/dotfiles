@@ -43,7 +43,16 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]] # git command from vim
 repo = 'tpope/vim-fugitive'
-
+hook_add = '''
+  nnoremap [fugitive]  <Nop>
+  nmap <Leader>g [fugitive]
+  nnoremap <silent> [fugitive]s :Gstatus<CR><C-w>T:h Fugitive<CR>233<S-G>
+  nnoremap <silent> [fugitive]a :Gwrite<CR>
+  nnoremap <silent> [fugitive]c :Gcommit-v<CR>
+  nnoremap <silent> [fugitive]b :Gblame<CR>
+  nnoremap <silent> [fugitive]d :Gdiff<CR>
+  nnoremap <silent> [fugitive]m :Gstatus<CR>:normal ca<CR>:wq
+'''
 ##################
 # nerdtree
 ##################
