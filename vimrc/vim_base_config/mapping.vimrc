@@ -114,6 +114,5 @@ nnoremap sQ :<C-u>bd<CR>
 " enhancing settings
 """"""""""""""""""""""""""""""""""""""""
 " buffer list
-nnoremap <Leader>l :ls<CR>:b<Space>
-nnoremap <Leader>r :reg<CR>:put<Space>
-
+nnoremap <silent> <Leader>l :ls<CR>:b<Space>
+nnoremap <silent> <Leader>r :reg<CR>:put<Space>
