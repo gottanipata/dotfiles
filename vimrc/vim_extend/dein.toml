@@ -271,6 +271,8 @@ on_ft = ['markdown','md']
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
 
+[[plugins]]
+repo = 'tenfyzhong/tagbar-markdown.vim'
 
 ##################
 # javascript
