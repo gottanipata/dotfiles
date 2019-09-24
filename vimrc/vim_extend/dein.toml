@@ -52,6 +52,8 @@ hook_add = '''
   nnoremap <silent> [fugitive]b :Gblame<CR>
   nnoremap <silent> [fugitive]d :Gdiff<CR>
   nnoremap <silent> [fugitive]m :Gstatus<CR>:normal ca<CR>:wq
+  nnoremap <silent> [fugitive]r :bufdo e!<CR>
+
 '''
 ##################
 # nerdtree
