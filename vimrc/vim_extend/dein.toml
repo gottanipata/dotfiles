@@ -250,6 +250,11 @@ let g:vimrubocop_rubocop_cmd = 'rbenv exec bundle exec rubocop'
 '''
 
 [[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+
+[[plugins]]
 repo = 'tpope/vim-haml'
 on_ft = ['haml']
 
