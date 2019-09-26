@@ -30,3 +30,9 @@ alias dfh="git diff @^ @"
 
 alias lgp="git log --pretty=oneline"
 
+# reset
+alias rs="git reset @ "
+alias rss="git reset --soft @^ "
+alias rsm="git reset --mixed @^ "
+
+
