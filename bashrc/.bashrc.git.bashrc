@@ -18,7 +18,7 @@ alias cmm="git commit -m"
 
 # push
 alias push="git push origin HEAD"
-alias updatemst="git checkout master; git pull upstream master; git push origin master;"
+alias updatemaster="git checkout master; git pull upstream master; git push origin master;"
 
 # log
 alias rmt="git remote"
