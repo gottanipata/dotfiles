@@ -1,0 +1,2 @@
+#!/bin/sh
+git diff $(git status -s | awk '{if ($1 == "M") print $2}' | fzf)
