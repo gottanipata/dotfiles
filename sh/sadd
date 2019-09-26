@@ -1,7 +1,7 @@
 #!/bin/sh
 SELECTED_FILE_TO_ADD="$(git status --porcelain | \
                               sed '/^[A|UU|M]/d' | \
-                              peco | \
+                              fzf | \
                               awk -F ' ' '{print $NF}')"
 if [ -n "$SELECTED_FILE_TO_ADD" ]; then
   search_root=`git rev-parse --show-toplevel`
@@ -9,8 +9,4 @@ if [ -n "$SELECTED_FILE_TO_ADD" ]; then
   `cd ${search_root} && git add ${files}`
 fi
 
-echo "Added:"
-for line in $SELECTED_FILE_TO_ADD
-do
-  echo $line
-done
+git status
