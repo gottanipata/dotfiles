@@ -20,3 +20,8 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 
 # imort my functions
 __load_my_funcs
+
+# setting direnv
+export EDITOR=vim
+eval (direnv hook fish)
+
