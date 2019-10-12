@@ -1,2 +1,2 @@
 #!/bin/sh
-git reset @  $(git status -s | awk '{if ($1 == "M") print $2}' | fzf)
+git reset @  $(git status -s | awk '{if ($1 == "M") print $2}' | fzf -m)
