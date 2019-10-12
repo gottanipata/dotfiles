@@ -30,6 +30,7 @@ alias dif="git diff"
 alias dfh="git diff @^ @"
 
 alias lgp="git log --pretty=oneline"
+alias lgpn="git log --pretty=oneline -n"
 
 # reset
 alias rs="git reset @ "
