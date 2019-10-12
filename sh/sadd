@@ -1,12 +1,20 @@
 #!/bin/sh
-SELECTED_FILE_TO_ADD="$(git status --porcelain | \
-                              sed '/^[A|UU|M]/d' | \
-                              fzf -m| \
-                              awk -F ' ' '{print $NF}')"
-if [ -n "$SELECTED_FILE_TO_ADD" ]; then
-  search_root=`git rev-parse --show-toplevel`
-  files=`echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' '`
-  `cd ${search_root} && git add ${files}`
-fi
+# SELECTED_FILE_TO_ADD="$(git status --porcelain | \
+#                               sed '/^[A|UU|M]/d' | \
+#                               fzf -m| \
+#                               awk -F ' ' '{print $NF}')"
+# if [ -n "$SELECTED_FILE_TO_ADD" ]; then
+#   search_root=`git rev-parse --show-toplevel`
+#   files=`echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' '`
+#   `cd ${search_root} && git add ${files}`
+# fi
+#
+# git status
 
-git status
+
+fga() {
+  modified_files=$(git status --short | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  git add $selected_files
+}
+fga
