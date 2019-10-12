@@ -136,7 +136,7 @@ hook_add = '''
   let g:auto_save = 1  " enable AutoSave on Vim startup
   let g:auto_save_no_updatetime = 1
   let g:auto_save_in_insert_mode = 0
-  let g:autosave_time = 3
+  let g:autosave_time = 2
 '''
 
 [[plugins]]
@@ -164,11 +164,9 @@ build = 'make'
 ##################
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+
 hook_add = '''
   let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#sources#omni#input_patterns = {
-  \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-  \}
 '''
 
 [[plugins]]
@@ -209,6 +207,16 @@ repo = 'szw/vim-tags'
 repo = 'majutsushi/tagbar'
 hook_add = '''
   nnoremap <Leader>t :TagbarToggle<CR>
+  let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+  \ }
 '''
 
 [[plugins]]
@@ -224,10 +232,20 @@ repo = 'ervandew/supertab' # methods list with ctags
 [[plugins]]
 repo = 'osyo-manga/vim-monster'
 on_ft = ['ruby', 'eruby', 'haml','slim','erb']
+depends = ['neocomplete.vim','vimproc.vim']
+
 hook_add = '''
-  let g:monster#completion#backend = 'solargraph'
+  let g:monster#completion#backend = "solargraph"
+  " let g:monster#completion#rcodetools#backend = "async_rct_complete"
   " Set async completion.
-  let g:monster#completion#rcodetools#backend = "async_rct_complete"
+  let g:monster#completion#rcodetools#backend = "async_solargraph_complete"
+  " let g:monster#completion#rcodetools#backend = "async_rct_complete"
+" autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+  if !exists('g:neocomplete#force_omni_input_patterns')
+   let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
 '''
 
 [[plugins]]
@@ -257,6 +275,14 @@ on_ft = ['slim']
 [[plugins]]
 repo = 'tpope/vim-haml'
 on_ft = ['haml']
+
+[[plugins]]
+repo = 'vim-scripts/ruby-matchit'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
 
 ##################
 # csv
