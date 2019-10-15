@@ -10,6 +10,11 @@ end
 # ls setting
 export LSCOLORS=cxfxcxdxbxegedabagacad
 
+# TODO: set PATHes before bax
+# setting direnv
+export EDITOR=vim
+eval (direnv hook fish)
+
 # imort bashrc
 bax source ~/dotfiles/.bashrc
 
@@ -21,7 +26,4 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 # imort my functions
 __load_my_funcs
 
-# setting direnv
-export EDITOR=vim
-eval (direnv hook fish)
 
