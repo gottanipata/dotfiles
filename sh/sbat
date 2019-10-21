@@ -1,0 +1,7 @@
+#!/bin/sh
+sbat() {
+  modified_files=$(git status --short | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  bat $selected_files
+}
+sbat
