@@ -27,6 +27,7 @@ alias co="git checkout"
 alias br="git branch"
 
 alias dif="git diff"
+alias di="git diff"
 alias dfh="git diff @^ @"
 
 alias lgp="git log --pretty=oneline"
