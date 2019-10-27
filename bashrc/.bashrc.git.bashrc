@@ -32,6 +32,8 @@ alias dfh="git diff @^ @"
 
 alias lgp="git log --pretty=oneline"
 alias lgpn="git log --pretty=oneline -n"
+alias lgt="git log --pretty=oneline -n 10"
+alias lgpd="git log --oneline --pretty=format:'%H [%cd] %d %s <%an>' --date=format:'%Y/%m/%d %H:%M:%S'"
 
 # reset
 alias rs="git reset @ "
