@@ -124,7 +124,7 @@ hook_add = '''
   noremap <Leader>w :WinResizerStartResize<CR>
 '''
 
-[[plugins]]
+[[plugins]] # camelCase to snake_case
 repo = 'tpope/vim-abolish'
 
 ##################
