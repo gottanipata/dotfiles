@@ -36,6 +36,10 @@ bax source ~/dotfiles/.bashrc
 alias sf="source ~/.config/fish/config.fish;"
 alias fishconf="vim ~/.config/fish/config.fish;"
 
+# dotfiles/sh/
+alias sad="sadd"
+
+
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # imort my functions
