@@ -51,6 +51,7 @@ hook_add = '''
   nnoremap <silent> [fugitive]c :Gcommit-v<CR>
   nnoremap <silent> [fugitive]b :Gblame<CR>
   nnoremap <silent> [fugitive]d :Gdiff<CR>
+  nnoremap <silent> [fugitive]h :Glog<CR>
   nnoremap <silent> [fugitive]m :Gstatus<CR>:normal ca<CR>:wq
   nnoremap <silent> [fugitive]r :bufdo e!<CR>
 
