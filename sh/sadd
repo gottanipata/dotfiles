@@ -18,4 +18,3 @@ sadd() {
   git add $selected_files
 }
 sadd
-alias sad="sadd"
