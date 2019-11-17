@@ -4,8 +4,16 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
-# sync bashrc to fish setting
-# make -C ~/dotfiles/Bash2FishAliasesSync sync; and source ~/.config/fish/b2f_aliases.fish
+
+function set_data_science_tools
+  if not test -e ~/.config/data-science-at-the-command-line/tools/
+    git clone https://github.com/jeroenjanssens/data-science-at-the-command-line.git
+  end
+
+  set PATH $PATH ~/.config/data-science-at-the-command-line/tools/
+  alias dstools='ls ~/.config/data-science-at-the-command-line/tools/'
+end
+set_data_science_tools
 
 # ls setting
 export LSCOLORS=cxfxcxdxbxegedabagacad
