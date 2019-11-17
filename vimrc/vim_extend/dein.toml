@@ -128,6 +128,36 @@ hook_add = '''
 [[plugins]] # camelCase to snake_case
 repo = 'tpope/vim-abolish'
 
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+hook_add = '''
+  let g:multi_cursor_quit_key = '<C-C>'
+  " disable syntax check
+  function! s:multiple_cursors_before()
+    if exists(':ALEDisableBuffer')==2
+        exe 'ALEDisableBuffer'
+    endif
+    if exists(':CocDisable')==2
+        exe 'CocDisable'
+    endif
+endfunction
+
+function! s:multiple_cursors_after()
+    if exists(':ALEEnableBuffer')==2
+        exe 'ALEEnableBuffer'
+    endif
+    if exists(':CocEnable')==2
+        exe 'CocEnable'
+    endif
+endfunction
+
+augroup multiple_cursors
+    autocmd User MultipleCursorsPre  call s:multiple_cursors_before()
+    autocmd User MultipleCursorsPost call s:multiple_cursors_after()
+augroup END
+'''
+
+
 ##################
 # vim拡張: 見えない系
 ##################
