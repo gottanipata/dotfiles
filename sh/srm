@@ -1,0 +1,7 @@
+#!/bin/sh
+srm() {
+  modified_files=$(git status --porcelain | awk '/^\?\?/ { print $2; }') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  rm $selected_files
+}
+srm
