@@ -63,6 +63,7 @@ hook_add = '''
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   map <Leader>n <plug>NERDTreeTabsToggle<CR>
+  map <Leader>f <plug>NERDTreeFind<CR>
 '''
 
 [[plugins]]
