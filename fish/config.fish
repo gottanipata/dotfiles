@@ -31,7 +31,7 @@ eval (direnv hook fish)
 # imort bashrc
 # sync bashrc to fish setting
 # make -C ~/dotfiles/Bash2FishAliasesSync sync; and source ~/.config/fish/b2f_aliases.fish
-
+source $HOME/dotfiles/fish/local.fish
 bax source ~/dotfiles/.bashrc
 
 alias sf="source ~/.config/fish/config.fish;"
