@@ -11,11 +11,11 @@ install_fisherman
 
 function set_data_science_tools
   set -l PATH  ~/.config/data-science-at-the-command-line
-  if not test -e $PATH
-    git clone https://github.com/jeroenjanssens/data-science-at-the-command-line.git $PATH
+  if not test -e $TOOL_PATH
+    git clone https://github.com/jeroenjanssens/data-science-at-the-command-line.git $TOOL_PATH
   end
 
-  set PATH $PATH ~/.config/data-science-at-the-command-line/tools/
+  set PATH $TOOL_PATH ~/.config/data-science-at-the-command-line/tools/
   alias dstools='ls ~/.config/data-science-at-the-command-line/tools/'
 end
 set_data_science_tools
