@@ -15,7 +15,6 @@ alias cm="git commit -v "
 alias am="cm --amend"
 alias cma="cm  --all"
 alias cmm="git commit -m"
-alias cm="git commit -m"
 alias m="git commit -m"
 
 # push
