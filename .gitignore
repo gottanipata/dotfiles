@@ -5,3 +5,4 @@
 /dict/*.txt
 
 .DS_store
+fish/fish_variables
