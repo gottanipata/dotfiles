@@ -7,3 +7,5 @@
 .DS_store
 fish/fish_variables
 fish/local.fish
+
+vimrc/color-scheme.vimrc

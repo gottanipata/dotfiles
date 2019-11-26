@@ -62,29 +62,6 @@ au FileType uml command! uml :!open Google\ Chrome %
 " base-config: mapping
 """"""""""""""""""""""""""""""""""""""""
 
-
-" blue.vim
-" darkblue.vim
-" default.vim
-" delek.vim
-" desert.vim
-" elflord.vim
-" evening.vim
-" koehler.vim
-" morning.vim
-" murphy.vim
-" pablo.vim
-" peachpuff.vim
-" ron.vim
-" shine.vim
-" slate.vim
-" torte.vim
-" zellner.vim
-"colorscheme slate " anpanman
-"colorscheme slate " deser
-colorscheme molokai
-" colorscheme desert
-
 " search
 set wrapscan "return first result if last
 set backspace=indent,eol,start
@@ -130,6 +107,11 @@ source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
 " dein
 """"""""""""""""""""""""""""""""""""""""
 source ~/dotfiles/vimrc/vim_extend/dein.vimrc
+
+""""""""""""""""""""""""""""""""""""""""
+" color-scheme
+""""""""""""""""""""""""""""""""""""""""
+source ~/dotfiles/vimrc/color-scheme.vimrc
 
 """"""""""""""""""""""""""""""""""""""""
 " extensions
