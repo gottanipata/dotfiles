@@ -98,10 +98,6 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
 omap s :normal vs<CR>
 
 " ----k-
-""""""""""""""""""""""""""""""""""""""""
-" base-config
-""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
 
 """"""""""""""""""""""""""""""""""""""""
 " dein
@@ -128,3 +124,8 @@ autocmd BufNewFile,BufRead *.fish  set filetype=fish
 autocmd BufNewFile,BufRead *.html.slim  set filetype=slim
 autocmd BufNewFile,BufRead *.schema  set filetype=ruby
 autocmd BufNewFile,BufRead Schemafile  set filetype=ruby
+
+""""""""""""""""""""""""""""""""""""""""
+" base-config
+""""""""""""""""""""""""""""""""""""""""
+source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc

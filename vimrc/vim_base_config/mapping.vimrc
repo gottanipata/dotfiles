@@ -116,3 +116,8 @@ nnoremap sQ :<C-u>bd<CR>
 " buffer list
 nnoremap <silent> <Leader>l :ls<CR>:b<Space>
 nnoremap <silent> <Leader>r :reg<CR>:put<Space>
+
+""""""""""""""""""""""""""""""""""""""""
+" mapping: paste
+""""""""""""""""""""""""""""""""""""""""
+vnoremap p "_dP
