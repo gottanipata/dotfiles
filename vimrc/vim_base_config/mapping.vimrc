@@ -121,3 +121,8 @@ nnoremap <silent> <Leader>r :reg<CR>:put<Space>
 " mapping: paste
 """"""""""""""""""""""""""""""""""""""""
 vnoremap p "_dP
+
+""""""""""""""""""""""""""""""""""""""""
+" mapping: edit
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>h :edit %:h<CR>
