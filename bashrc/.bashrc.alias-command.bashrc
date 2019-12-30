@@ -17,6 +17,7 @@ alias be="bundle exec "
 alias vim="nvim"
 alias swhichvim='alias vim="vim"'
 alias swhichnvim='alias vim="nvim"'
+alias sv="svim"
 alias vrc="vim ~/.vimrc"
 alias htconf="sudo vi /etc/apache2/httpd.conf"
 alias bo="vim ~/.bashrc; source ~/.bashrc"
