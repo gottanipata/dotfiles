@@ -48,7 +48,7 @@ hook_add = '''
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
-  nmap <Leader>f <plug>NERDTreeFind<CR>
+  nmap <Leader>f :NERDTreeFind<CR>
 '''
 
 [[plugins]]
