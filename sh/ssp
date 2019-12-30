@@ -1,0 +1,8 @@
+#!/bin/sh
+ssp() {
+  modified_files=$(git status --short spec | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  echo "rspec $selected_files" | pbcopy &&
+  bundle exec rspec $selected_files
+}
+ssp
