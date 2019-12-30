@@ -39,6 +39,11 @@ nnoremap <Leader>ve :edit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 
 """"""""""""""""""""""""""""""""""""""""
+" mapping: editting
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>s :s<CR>
+
+""""""""""""""""""""""""""""""""""""""""
 " plugin setting: yank copy
 """"""""""""""""""""""""""""""""""""""""
 " 貼り付けたテキストの末尾へ自動的に移動
