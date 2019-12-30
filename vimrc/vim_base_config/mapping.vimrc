@@ -35,8 +35,8 @@ nnoremap <C-p> <Up>
 """"""""""""""""""""""""""""""""""""""""
 " mapping: edit vimrc
 """"""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>e :edit $MYVIMRC<CR>
-nnoremap <Leader>s :source $MYVIMRC<CR>
+nnoremap <Leader>ve :edit $MYVIMRC<CR>
+nnoremap <Leader>vs :source $MYVIMRC<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " plugin setting: yank copy
