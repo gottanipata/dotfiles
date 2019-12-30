@@ -14,6 +14,9 @@ alias r="rails "
 alias be="bundle exec "
 
 # vim
+alias vim="nvim"
+alias swhichvim='alias vim="vim"'
+alias swhichnvim='alias vim="nvim"'
 alias vrc="vim ~/.vimrc"
 alias htconf="sudo vi /etc/apache2/httpd.conf"
 alias bo="vim ~/.bashrc; source ~/.bashrc"
