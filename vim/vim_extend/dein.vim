@@ -20,6 +20,10 @@ if &runtimepath !~# '/dein.vim'
 endif
 
 if dein#load_state(s:chached_dein_path)
+  " delete setting
+  " call map(dein#check_clean(), "delete(v:val, 'rf')")
+  " call dein#recache_runtimepath()
+
   call dein#begin(s:chached_dein_path)
   call dein#load_toml(s:dein_toml)
   " call dein#load_toml(s:dein_ft_toml, {'lazy': 1})
