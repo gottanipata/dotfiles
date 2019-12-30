@@ -1,7 +1,22 @@
 #!/bin/sh
-svim() {
-  files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
-  vim -p $selected_files
-}
-svim
+
+# オプションに値がいる場合、':'をつける
+# 例) while getopts ab:c: OPT
+    # "o" ) FLG_B="TRUE" ; VALUE_B="$OPTARG" ;;
+OPTION="-p" # default値
+while getopts poO OPT
+do
+  case $OPT in
+    p) OPTION="-${OPT}";;
+    o) OPTION="-${OPT}";;
+    O) OPTION="-${OPT}";;
+    *) echo "Usage: $CMDNAME [-p] [-o] [-O]" 1>&2
+      exit 1 ;;
+  esac
+done
+
+
+files=$(git ls-files) &&
+selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+echo vim $OPTION $selected_files &&
+vim $OPTION $selected_files
