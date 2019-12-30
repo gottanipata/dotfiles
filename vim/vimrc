@@ -1,7 +1,7 @@
 set encoding=utf-8
 " set fileencodings=uiso-2022-jp,euc-jp,sjis,tf-8
 let mapleader=" "
-set updatetime=1000
+et updatetime=1000
 
 " ---------- start to help
 " visualmode
@@ -109,21 +109,21 @@ omap s :normal vs<CR>
 """"""""""""""""""""""""""""""""""""""""
 " dein
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/vim_extend/dein.vimrc
+source ~/dotfiles/vim/vim_extend/dein.vim
 
 """"""""""""""""""""""""""""""""""""""""
 " color-scheme
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/color-scheme.vimrc
+source ~/dotfiles/vim/color-scheme.vim
 
 """"""""""""""""""""""""""""""""""""""""
 " extensions
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/vim_extend/continuous-paste.vimrc
-source ~/dotfiles/vimrc/vim_extend/no_indent_copy.vimrc
-source ~/dotfiles/vimrc/vim_extend/tab-line.vimrc
+source ~/dotfiles/vim/vim_extend/continuous-paste.vim
+source ~/dotfiles/vim/vim_extend/no_indent_copy.vim
+source ~/dotfiles/vim/vim_extend/tab-line.vim
 
-command! Tml :edit ~/dotfiles/vimrc/vim_extend/dein.toml
+command! Tml :edit ~/dotfiles/vim/vim_extend/dein.toml
 
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
@@ -135,5 +135,5 @@ autocmd BufNewFile,BufRead Schemafile  set filetype=ruby
 """"""""""""""""""""""""""""""""""""""""
 " base-config
 """"""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
+source ~/dotfiles/vim/vim_base_config/mapping.vim
 
