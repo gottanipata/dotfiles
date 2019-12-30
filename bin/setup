@@ -1,5 +1,13 @@
 #!/bin/sh
+DIR_NVIM=~/.config/nvim
+if [ -d $DIR_NVIM ]; then #  -dはディレクトリがあるか確認する
+  mkdir -p $DIR_NVIM
+  echo "created directory  $DIR_NVIM"
+fi
+
 ln -s ~/dotfiles/.bashrc ~/.basrc
+ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/
 ln -s ~/dotfiles/.peco/ ~/
 ln -s ~/dotfiles/fish/ ~/.config/
 ln -s ~/dotfiles/.pryrc ~/.pryrc
