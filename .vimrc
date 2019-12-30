@@ -79,6 +79,13 @@ set splitbelow " 新しいウィンドウを下に開く
 set splitright " 新しいウィンドウを右に開く
 " --------- End of display setting
 
+" fast drawing settings
+set synmaxcol=300
+set lazyredraw " TODO clipboard利用するときwindow増えると貼れなくなる
+set ttyfast
+" set re=1 " syntaxのを古くするらしいRuby限定とのこと
+" https://vim-jp.org/vimdoc-ja/options.html#'regexpengine'
+
 " auto commands
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -129,3 +136,4 @@ autocmd BufNewFile,BufRead Schemafile  set filetype=ruby
 " base-config
 """"""""""""""""""""""""""""""""""""""""
 source ~/dotfiles/vimrc/vim_base_config/mapping.vimrc
+
