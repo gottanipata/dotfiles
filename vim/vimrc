@@ -1,7 +1,7 @@
 set encoding=utf-8
 " set fileencodings=uiso-2022-jp,euc-jp,sjis,tf-8
 let mapleader=" "
-et updatetime=1000
+set updatetime=1000
 
 " ---------- start to help
 " visualmode
