@@ -4,22 +4,26 @@ endif
 
 " Required:
 set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
-let s:lazy_toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein_lazy.toml'
+
+let s:chached_dein_path = $HOME . '/.cache/dein'
+let s:dein_toml = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+" let s:dein_ft_toml = fnamemodify(expand('<sfile>'), ':h').'/dein_ft.toml'
+let s:dein_lazy_toml = fnamemodify(expand('<sfile>'), ':h').'/dein_lazy.toml'
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
+  let s:din_repo_dir = '~/.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" Required:
-if dein#load_state($HOME . '/.cache/dein')
-  call dein#begin($HOME . '/.cache/dein')
-  call dein#load_toml(s:toml_file)
-  call dein#load_toml(s:lazy_toml_file, {'lazy': 1})
+if dein#load_state(s:chached_dein_path)
+  call dein#begin(s:chached_dein_path)
+  call dein#load_toml(s:dein_toml)
+  " call dein#load_toml(s:dein_ft_toml, {'lazy': 1})
+  call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
