@@ -1,22 +1,46 @@
 #!/bin/sh
 
+##############
+# set default
+##############
+OPTION="-p"
+files=$(git ls-files)
+
+##############
+# start option checks
+##############
+# `getopts`:
 # オプションに値がいる場合、':'をつける
 # 例) while getopts ab:c: OPT
     # "o" ) FLG_B="TRUE" ; VALUE_B="$OPTARG" ;;
-OPTION="-p" # default値
-while getopts poO OPT
+
+# shift:
+# $1を削除し、$1=$2..$nしていく
+while getopts poOd: OPT
 do
   case $OPT in
     p) OPTION="-${OPT}";;
     o) OPTION="-${OPT}";;
     O) OPTION="-${OPT}";;
-    *) echo "Usage: $CMDNAME [-p] [-o] [-O]" 1>&2
+    d) OPTION="-${OPT}"
+      # default値として、'.'を使う
+      dir=$OPTARG
+      if [ "$#" == 0 ]; then
+        dir="."
+      fi
+      files=$(find "${dir}") # -type f # file only
+    ;;
+    *) echo "Usage: $CMDNAME [-p] [-o] [-O] [-d <dir_name>]" 1>&2
       exit 1 ;;
   esac
 done
 
-
-files=$(git ls-files) &&
+# TODO コマンド結果を渡すといいか検討する
+# ex) svim -e 'rg -l <find_word>'
+# もはや別コマンドに分けたほうがいいのかも
+##############
+# execute command
+##############
 selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
 echo vim $OPTION $selected_files &&
 vim $OPTION $selected_files
