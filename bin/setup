@@ -1,6 +1,5 @@
 #!/bin/sh
 ln -s ~/dotfiles/.bashrc ~/.basrc
-ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.peco/ ~/
 ln -s ~/dotfiles/fish/ ~/.config/
 ln -s ~/dotfiles/.pryrc ~/.pryrc
