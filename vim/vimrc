@@ -7,11 +7,9 @@ set updatetime=1000
 " visualmode
 " g <C-g>: show line info
 "
-" tarminal mode
-" <C-w> N: normal mode
-
 " !!!!! 大文字じゃないとだめみたい
-tmap <C-W>' <C-W>N
+" set termkey=<A-w>
+" tmap <C-w> N : normal mode
 " noremap <C-w>: 'j-w>N
 
 " ---------- end of help
@@ -74,9 +72,6 @@ set wildmode=list:longest,full " コマンドラインモードでの補完方�
 set noswapfile " スワップファイルを作成しない
 set scrolloff=6 " scroll時のoffset行数
 
-" window
-set splitbelow " 新しいウィンドウを下に開く
-set splitright " 新しいウィンドウを右に開く
 " --------- End of display setting
 
 " fast drawing settings
@@ -124,6 +119,7 @@ source ~/dotfiles/vim/vim_extend/no_indent_copy.vim
 source ~/dotfiles/vim/vim_extend/tab-line.vim
 
 command! Tml :edit ~/dotfiles/vim/vim_extend/dein.toml
+command! Vrc :edit ~/.vimrc
 
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
@@ -137,3 +133,46 @@ autocmd BufNewFile,BufRead Schemafile  set filetype=ruby
 """"""""""""""""""""""""""""""""""""""""
 source ~/dotfiles/vim/vim_base_config/mapping.vim
 
+" window
+set splitbelow " 新しいウィンドウを下に開く
+set splitright " 新しいウィンドウを右に開く
+
+" tarminal mode
+if has('nvim')
+  " Neovim 用
+  " TODO splitしたい
+  autocmd TermOpen term://* startinsert
+  " tnoremap <Esc> <C-\><C-n>
+  " noremap :te :split term://fish
+  " autocmd WinEnter * if &buftype == 'terminal' | :startinsert | endif
+  " tmap <C-W>N <C-\><C-n>
+  " tmap <C-W>h <C-W>h
+  " TODO 微妙に遅いので、なんとかしたい
+  tnoremap <C-w>h <C-\><C-n><C-w>h
+  tnoremap <C-w>j <C-\><C-n><C-w>j
+  tnoremap <C-w>k <C-\><C-n><C-w>k
+  tnoremap <C-w>l <C-\><C-n><C-w>l
+  inoremap <C-w>h <C-\><C-n><C-w>h
+  inoremap <C-w>j <C-\><C-n><C-w>j
+  inoremap <C-w>k <C-\><C-n><C-w>k
+  inoremap <C-w>l <C-\><C-n><C-w>l
+
+  " When forcus insert mode
+  " https://github.com/neovim/neovim/issues/8816
+  let g:previous_window = -1
+  function SmartInsert()
+    if &buftype == 'terminal'
+      if g:previous_window != winnr()
+        startinsert
+      endif
+      let g:previous_window = winnr()
+    else
+      let g:previous_window = -1
+    endif
+  endfunction
+
+  au BufEnter * call SmartInsert()
+else
+  " Vim 用
+  tmap <C-W>' <C-W>N
+endif
