@@ -14,7 +14,6 @@ alias r="rails "
 alias be="bundle exec "
 
 # vim
-alias vim="nvim"
 alias swhichvim='alias vim="vim"'
 alias swhichnvim='alias vim="nvim"'
 alias sv="svim"
