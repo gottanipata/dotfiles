@@ -131,3 +131,5 @@ vnoremap p "_dP
 " mapping: edit
 """"""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>h :edit %:h<CR>
+nnoremap <Leader>q :wqa<CR>
+nnoremap <Leader>c :wq<CR>
