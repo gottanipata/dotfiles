@@ -35,6 +35,8 @@ nnoremap <C-p> <Up>
 """"""""""""""""""""""""""""""""""""""""
 " mapping: edit vimrc
 """"""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>c :wq<CR>
+nnoremap <Leader>q :wqq<CR>
 nnoremap <Leader>ve :edit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 
