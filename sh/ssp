@@ -1,8 +1,38 @@
 #!/bin/sh
-ssp() {
-  modified_files=$(git status --short spec | awk '{print $2}') &&
-  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
-  echo "rspec $selected_files" | pbcopy &&
-  bundle exec rspec $selected_files
-}
-ssp
+##############
+# set default
+##############
+OPTION="-O"
+files=$(git status --short spec | awk '{print $2}')  #&&
+
+##############
+# start option checks
+##############
+# `getopts`:
+# オプションに値がいる場合、':'をつける
+# 例) while getopts ab:c: OPT
+    # "o" ) FLG_B="TRUE" ; VALUE_B="$OPTARG" ;;
+
+while getopts d:a OPT
+do
+  case $OPT in
+    d) OPTION="-${OPT}"
+      # default値として、'.'を使う
+      dir=$OPTARG
+      files=$(git ls-files dir)
+    ;;
+    a) OPTION="-${OPT}"
+      files=$(git ls-files spec)
+    ;;
+    *) echo "Usage: $CMDNAME [-a: select from all spec files.] [-d <dir_name>]" 1>&2
+      exit 1 ;;
+  esac
+done
+
+##############
+# command execution
+##############
+
+selected_files=$(echo "$files" | fzf -m --preview 'git diff {}') &&
+echo "rspec $(echo $selected_files | tr '\' '\n')" | pbcopy &&
+bundle exec rspec $selected_files
