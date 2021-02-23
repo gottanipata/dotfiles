@@ -3,6 +3,7 @@ alias dtf="cd ~/dotfiles/"
 # git情報表示系
 alias st="git status"
 alias lg="git log"
+alias rt="cd (git rev-parse --show-superproject-working-tree --show-toplevel | head -1)"
 
 # add
 alias add="git add"
