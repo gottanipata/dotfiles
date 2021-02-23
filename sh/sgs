@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+selected_commit = `git log --pretty=oneline -n 30 | fzf -m`
+commit_id = selected_commit.split(' ').first
+cmd= "git show #{commit_id}"
+exec cmd # ruby インタプリタを置き換える
