@@ -16,12 +16,16 @@ files=$(git ls-files)
 
 # shift:
 # $1を削除し、$1=$2..$nしていく
+# TODO 複数のoptionに対応する
 while getopts poOd: OPT
 do
   case $OPT in
     p) OPTION="-${OPT}";;
     o) OPTION="-${OPT}";;
     O) OPTION="-${OPT}";;
+    a) OPTION="-${OPT}"
+      # TODO -aでmodifiedのやつをセンタくできる
+    ;;
     d) OPTION="-${OPT}"
       # default値として、'.'を使う
       dir=$OPTARG
@@ -34,6 +38,7 @@ do
       exit 1 ;;
   esac
 done
+# TODO -d optionもディレクトリ選択でOK
 
 # TODO コマンド結果を渡すといいか検討する
 # ex) svim -e 'rg -l <find_word>'
