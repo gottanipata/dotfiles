@@ -3,6 +3,7 @@
 alias ls="ls -G"
 alias ll="ls -l"
 alias la="ls -la"
+alias pst="pbpaste"
 
 alias treex="tree -NF | perl -pe 's/^├── //g; s/^└── //g; s/^│\xc2\xa0\xc2\xa0\x20//g; s/├── /\t/g; s/│\xc2\xa0\xc2\xa0\x20/\t/g; s/└── /\t/g; s/    /\t/g; s/\*$//g; s/^\.\n//g;'"
 
