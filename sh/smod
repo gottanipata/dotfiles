@@ -2,6 +2,6 @@
 smod() {
   modified_files=$(git status --short | awk '{print $2}') &&
   selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
-  vim -p $selected_files
+  vim -O $selected_files
 }
 smod
