@@ -127,6 +127,8 @@ nnoremap <silent> <Leader>r :reg<CR>:put<Space>
 """"""""""""""""""""""""""""""""""""""""
 " mapping: paste
 """"""""""""""""""""""""""""""""""""""""
+" for vscode
+xnoremap p "_dP
 vnoremap p "_dP
 
 """"""""""""""""""""""""""""""""""""""""
