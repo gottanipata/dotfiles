@@ -17,3 +17,6 @@ ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotfiles/.peco/ ~/.peco
 ln -s ~/dotfiles/fish/ ~/.config/fish
 ln -s ~/dotfiles/.pryrc ~/.pryrc
+
+touch ../bashrc/.bashrc.export.bashrc
+touch ../bashrc/.bashrc.cd-specific.bashrc
