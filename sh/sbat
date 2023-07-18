@@ -1,7 +1,11 @@
 #!/bin/sh
-sbat() {
-  modified_files=$(git status --short | awk '{print $2}') &&
-  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
-  bat $selected_files
-}
-sbat
+# sbat() {
+#   modified_files=$(git status --short | awk '{print $2}') &&
+#   selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+#   bat $selected_files
+# }
+# sbat
+
+files=$(git ls-files)
+selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+bat $selected_files
