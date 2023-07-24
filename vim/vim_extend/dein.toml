@@ -371,6 +371,10 @@ repo = 'aklt/plantuml-syntax'
 on_ft = ['uml','plantuml']
 
 [[plugins]]
+repo = 'weirongxu/plantuml-previewer.vim'
+on_ft = ['uml','plantuml', 'puml']
+
+[[plugins]]
 repo = 'tenfyzhong/tagbar-markdown.vim'
 on_ft = ['markdown', 'md']
 
