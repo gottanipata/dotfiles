@@ -1,0 +1,49 @@
+# based from: https://zenn.dev/masayukeeeee/articles/02dfab992e486a
+
+# focus window
+alt - n: yabai -m window --focus next || yabai -m display --focus next
+alt - b: yabai -m window --focus prev || yabai -m display --focus prev
+
+# move managed window
+shift + cmd - h: yabai -m window --warp next
+shift + cmd - j: yabai -m window --warp prev
+
+# make window fill screen
+# shift + ctrl + cmd - m: yabai -m window --grid 1:1:0:0:1:1
+
+# make window fill a half of screen
+# shift + ctrl + cmd - left: yabai -m window --grid 1:2:0:0:1:1
+# shift + ctrl + cmd - right: yabai -m window --grid 1:2:1:0:1:1
+# shift + ctrl + cmd - up: yabai -m window --grid 2:1:1:0:1:1
+# shift + ctrl + cmd - down: yabai -m window --grid 2:1:0:1:1:1
+
+# move window between displays
+shift + ctrl + alt - left: yabai -m window --display next; yabai -m display --focus next; yabai -m window --focus last; yabai -m window --grid 1:1:0:0:1:1;
+shift + ctrl + alt - right: yabai -m window --display prev; yabai -m display --focus prev; yabai -m window --focus last; yabai -m window --grid 1:1:0:0:1:1;
+
+# open app
+# shift + ctrl + cmd - k: open /Applications/kitty.app
+# shift + ctrl + cmd - n: open /Applications/Notion.app
+shift + ctrl + cmd - g: open /Applications/Google\ Chrome.app
+shift + ctrl + cmd - v: open /Applications/Visual\ Studio\ Code.app
+shift + ctrl + cmd - s: open /Applications/Slack.app
+shift + ctrl + cmd - l: open /Applications/LINE.app
+shift + ctrl + cmd - t: open /Applications/TickTick.app
+shift + ctrl + cmd - o: open /Applications/Obsidian.app
+shift + ctrl + cmd - d: open /Applications/DeepL.app
+shift + ctrl + cmd - k: open /Applications/Skype.app
+shift + ctrl + cmd - f: open ~/
+# shift + ctrl + cmd - t: open /Applications/Microsoft\ Teams.app
+# shift + ctrl + cmd - o: open /Applications/Microsoft\ Outlook.app
+# shift + ctrl + cmd - r: open /Applications/RStudio.app
+#
+#Switch workspaces
+# ctrl - 1 : yabai -m space --focus 1
+# ctrl - 2 : yabai -m space --focus 2
+# ctrl - 3 : yabai -m space --focus 3
+# ctrl - 4 : yabai -m space --focus 4
+# ctrl - 5 : yabai -m space --focus 5
+ctrl - 6: yabai -m space --focus 6
+ctrl - 7: yabai -m space --focus 7
+ctrl - 8: yabai -m space --focus 8
+ctrl - 9: yabai -m space --focus 9
