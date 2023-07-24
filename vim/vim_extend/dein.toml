@@ -229,6 +229,8 @@ hook_add = '''
     set conceallevel=2 concealcursor=niv
   endif
 
+
+  let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
 "  g:neosnippet#disable_runtime_snippets
 '''
 
