@@ -7,7 +7,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 ###################################
 # export
-export PATH=$HOME/dotfiles/sh/:$PATH
+export PATH=$HOME/dotfiles/sh/:$HOME/dotfiles/sh/local/:$PATH
 
 export FZF_DEFAULT_OPTS="--height=70%"
 source ~/dotfiles/bashrc/.bashrc.export.bashrc
