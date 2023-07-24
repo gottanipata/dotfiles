@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
+# https://github.com/koekeishiya/yabai/issues/838
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+#
+alias yc='yabai -m config'
+alias yr='yabai -m rule --add'
 
 # global settings
 # コマンドでwindowを変えたときに、自動的にマウスがwindowに乗る
@@ -17,7 +23,7 @@ yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.95
 yabai -m config window_border                off
-yabai -m config window_border_width          6
+yabai -m config window_border_width          0
 yabai -m config active_window_border_color   0xff775759
 yabai -m config normal_window_border_color   0xff555555
 yabai -m config insert_feedback_color        0xaad75f5f
@@ -42,18 +48,46 @@ yabai -m config window_gap                   06
 # space setting
 # TODO: 新しくruleに伴って、spaceを作る
 # TODO: LINEはwindow floatする
-yabai -m rule --add app="^TickTick$" space=1
-yabai -m rule --add app="^Obsidian$" space=2
-yabai -m rule --add app="^Google\ Chrome|Firefox|Safari|Arc$" space=3
-yabai -m rule --add app="^System Settings|System\ Settings|System Preferences|Finder$" space=4
-yabai -m rule --add app="^iTerm2|Warp$" space=5
-yabai -m rule --add app="^Slack$" space=6
-yabai -m rule --add app="^Slack$" space=7
+#
+# float
+yabai -m rule --add app="^System Settings|System\ Settings|System Preferences|Finder$" manage=off layer=above
+yabai -m rule --add app="^DeepL*$" manage=off layer=above
+yr app='App Store' manage=off layer=above
+yr title='^(Opening)' manage=off layer=above
 
-yabai -m config layout                       bsp
+yabai -m space 1 --label "ToDo"
+yabai -m space 2 --label "Note"
+yabai -m space 3 --label "Browser"
+yabai -m space 4 --label "Terminal"
+yabai -m space 5 --label "Chat"
+yabai -m space 6 --label "TeamChat"
+yabai -m space 7 --label "Editor"
+
+# キャレットがあると対応するspaceに移動する
+# https://github.com/koekeishiya/yabai/issues/1387
+yabai -m rule --add app="^TickTick$" space=^"ToDo"
+yabai -m rule --add app="^Obsidian$" space=^"Note"
+yabai -m rule --add app="^Arc$" space=^"Browser" manage=off layer=above
+yabai -m rule --add app="^Google Chrome$" space=^"Browser"
+yabai -m rule --add app="LINE" space=^"Chat" #Wmanage=on layer=above
+yabai -m rule --add app="^Warp$" space=^"Terminal"
+yabai -m rule --add app="^Slack$" space=^"TeamChat"
+
+# window削除したら、別のwindowに行く
+# yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# アプリっ削除したら 別のwindowに行く
+# yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# landscapeコマンドなぞ存在しないので、disable
+# yabai -m signal --add event=space_changed action="landscape"
+# displayが追加されたらspaceの数を確認し、対応するspaceにarcブラウザを乗っける
+yabai -m signal --add event=application_launched app="^LINE$" action="yabai -m space --focus Chat"
+
+yabai -m config layout                 bsp
 # ticktickだけfloatにする
 yabai -m config --space 1 layout      float
 # arcも
 yabai -m config --space 3 layout      float
+
+# TODO: app消したら、arcに戻る
 
 echo "yabai configuration loaded.."
