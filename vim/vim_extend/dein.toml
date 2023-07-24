@@ -161,6 +161,7 @@ repo = 'Lokaltog/vim-easymotion'
 hook_add = '''
   let g:EasyMotion_do_mapping = 0
   nmap z <Plug>(easymotion-s2)
+  vmap z <Plug>(easymotion-s2)
 '''
 
 ##################
