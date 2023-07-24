@@ -15,8 +15,11 @@ ln -s ~/dotfiles/.bashrc ~/.basrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotfiles/.peco/ ~/.peco
-ln -s ~/dotfiles/fish/ ~/.config/fish
 ln -s ~/dotfiles/.pryrc ~/.pryrc
 
 touch ../bashrc/.bashrc.export.bashrc
-touch ../bashrc/.bashrc.cd-specific.bashrc
+touch ../bashrc/.bashrc.local.bashrc
+cp ../vim/color-scheme-template.vim ../vim/color-scheme.vim
+
+echo "もうfish dirがあるかもなので、確認してから実行してください"
+echo "cp ~/dotfiles/fish/ ~/.config/fish"
