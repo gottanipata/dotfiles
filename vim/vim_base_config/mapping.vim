@@ -17,12 +17,13 @@
 """"""""""""""""""""""""""""""""""""""""
 " mapping: emacs like
 """"""""""""""""""""""""""""""""""""""""
-noremap <C-a> <Home>
 noremap <C-e> <End>
-noremap! <C-a> <Home>
+noremap <C-a> <Home>
 noremap! <C-e> <End>
 noremap <C-k> d<End>
 noremap! <C-k> <ESC>d$i
+" increment: errorが出るので一時的に停止
+" noremap <C-s> <C-a>
 
 " normalMode$B$G$O(Bscroll$B$7$?$$$N$G3d$jEv$F$F$$$J$$(B
 noremap! <C-f> <Right>
