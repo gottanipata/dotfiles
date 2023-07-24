@@ -1,3 +1,4 @@
+let NERDTreeShowHidden=1
 set encoding=utf-8
 " set fileencodings=uiso-2022-jp,euc-jp,sjis,tf-8
 let mapleader=" "
