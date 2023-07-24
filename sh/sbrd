@@ -1,0 +1,11 @@
+#!/bin/sh
+# delete selected branches
+sbrd() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf -m  --reverse) &&
+  git branch -D $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+# TODO: add confirm option
+
+sbrd
