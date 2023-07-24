@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    current_version="0.0.0"
+else
+    current_version="$1"
+fi
+
+# Prompt the user to choose which version number to update
+# Use 3 as the default value for the prompt
+read -rp "choose [123]: 1.major, 2.minor, or 3.revision(default) " choice
+choice=${choice:-3}
+
+# Prompt the user to enter the new version number, with an incremental suggestion
+case $choice in
+  1)
+    new_version=$(echo "$current_version" | awk -F. '{print $1+1".0.0"}')
+    ;;
+  2)
+    new_version=$(echo "$current_version" | awk -F. '{print $1"."$2+1".0"}')
+    ;;
+  3)
+    new_version=$(echo "$current_version" | awk -F. '{print $1"."$2"."$3+1}')
+    ;;
+  *)
+    echo "Invalid choice. Exiting..."
+    exit 1
+    ;;
+esac
+
+# Print the new version number
+echo $new_version
