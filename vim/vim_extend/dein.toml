@@ -361,6 +361,10 @@ on_ft = ['fish']
 [[plugins]]
 repo = 'gabrielelana/vim-markdown'
 on_ft = ['markdown','md']
+hook_add = '''
+  let g:markdown_enable_spell_checking = 0
+'''
+
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
