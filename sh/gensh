@@ -1,0 +1,5 @@
+#!/bin/sh
+cd ~/dotfiles/sh;
+# TODO check existance of $1 file
+touch $1;
+echo "#!/bin/sh" >> $1;
