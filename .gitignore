@@ -11,3 +11,4 @@ fish/local.fish
 vimrc/color-scheme.vimrc
 
 .credential
+sh/local/*
