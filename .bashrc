@@ -30,7 +30,7 @@ source ~/dotfiles/bashrc/.bashrc.prompt.bashrc
 ###################################
 # user-specific-settings
 ###################################
-source ~/dotfiles/bashrc/.bashrc.cd-specific.bashrc
+source ~/dotfiles/bashrc/.bashrc.local.bashrc
 
 ls_validator
 
