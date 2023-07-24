@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# TODO: オプション
+# gsubコマンドにオプションつける
+
+# 1. snake_case
+# 2. camelCase
+# 3. CapitalCase
+# 4. (cababu-case)ないので不要
+# 6. ディレクトリ & ファイル指定
+# snake_caseはsnakeのまま、camelCaseはcamelCaseのまま,CapitalCaseはそのまま
+# --keep-case(--k)
+# -s
+# -c
+# -C
+# <ファイル名>または<ディレクトリ名>
+
+rg -l "$1" ./;
+rg -l "$1" ./  | xargs sed -i '' -e "s/$1/$2/g";
