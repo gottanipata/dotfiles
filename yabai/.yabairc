@@ -21,7 +21,6 @@ yabai -m config window_shadow                off
 yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.95
 yabai -m config window_border                off
 yabai -m config window_border_width          0
 yabai -m config active_window_border_color   0xff775759
@@ -60,14 +59,16 @@ yabai -m space 2 --label "Note"
 yabai -m space 3 --label "Browser"
 yabai -m space 4 --label "Terminal"
 yabai -m space 5 --label "Chat"
-yabai -m space 6 --label "TeamChat"
-yabai -m space 7 --label "Editor"
+yabai -m space 6 --label "Book"
+yabai -m space 7 --label "TeamChat"
+yabai -m space 8 --label "Editor"
 
 # キャレットがあると対応するspaceに移動する
 # https://github.com/koekeishiya/yabai/issues/1387
 yabai -m rule --add app="^TickTick$" space=^"ToDo"
 yabai -m rule --add app="^Obsidian$" space=^"Note"
 yabai -m rule --add app="^Arc$" space=^"Browser" manage=off layer=above
+yabai -m rule --add app="^Kindle$" space=^"Book"
 yabai -m rule --add app="^Google Chrome$" space=^"Browser"
 yabai -m rule --add app="LINE" space=^"Chat" #Wmanage=on layer=above
 yabai -m rule --add app="^Warp$" space=^"Terminal"
