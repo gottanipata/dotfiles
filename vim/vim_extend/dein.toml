@@ -177,7 +177,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
 repo = 'rhysd/accelerated-jk'
