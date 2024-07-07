@@ -4,14 +4,15 @@ if [ -d $DIR_NVIM ]; then #  -dはディレクトリがあるか確認する
   mkdir -p $DIR_NVIM
   echo "created directory  $DIR_NVIM"
 fi
-unlink ~/.basrc
+
+unlink ~/.bashrc
 unlink ~/.vimrc
 unlink ~/.config/nvim/init.vim
 unlink ~/.peco
 unlink ~/.config/fish # 末尾にバックスラッシュをつけると、できなくなる
 unlink ~/.pryrc
 
-ln -s ~/dotfiles/.bashrc ~/.basrc
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotfiles/.peco/ ~/.peco
