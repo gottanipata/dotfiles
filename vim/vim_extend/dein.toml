@@ -386,10 +386,6 @@ repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
 [[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
-
-[[plugins]]
 repo = 'othree/es.next.syntax.vim'
 on_ft = ['javascript', 'javascriptreact', 'javascript.jsx'  'javascript.tsx','typescript']
 
