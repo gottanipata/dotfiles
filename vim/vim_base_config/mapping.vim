@@ -138,3 +138,16 @@ vnoremap p "_dP
 nnoremap <Leader>h :edit %:h<CR>
 nnoremap <Leader>q :wqa<CR>
 nnoremap <Leader>c :wq<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""
+" mapping: edit
+""""""""""""""""""""""""""""""""""""""""
+" Increase the width of the current window to the left
+nnoremap <C-H> :vertical resize +2<CR>
+" Increase the height of the current window downwards
+nnoremap <C-J> :resize +2<CR>
+" Increase the height of the current window upwards
+nnoremap <C-K> :resize -2<CR>
+" Increase the width of the current window to the right
+nnoremap <C-L> :vertical resize -2<CR>
